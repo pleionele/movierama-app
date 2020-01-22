@@ -29,10 +29,13 @@
     "ts-loader": "^6.2.1",
     "typescript": "^3.7.5",
     "webpack": "^4.41.5",
-    "webpack-cli": "^3.3.10"
-    },
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1",
+    "identity-obj-proxy": "^3.0.0"
+  },
   "scripts": {
-    "start": "webpack --mode development",
-    "build": "webpack --mode production"
+    "start": "webpacK-dev-server --mode development --open --hot",
+    "build": "webpack --mode production",
+    "test": "jest"
   }
 }
