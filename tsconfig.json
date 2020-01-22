@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+      "outDir": "dist/",
+      "noImplicitAny": true,
+      "module": "esnext",
+      "target": "esnext",
+      "jsx": "react",
+      "allowSyntheticDefaultImports": true,
+      "strict": true,
+      "forceConsistentCasingInFileNames": true
+
+    },
+    "include": [
+      "./src/**/*"
+    ],
+    "typeRoots": ["node_modules/@types"],
+    "exclude": ["node_modules"]
+  }
