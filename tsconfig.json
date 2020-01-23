@@ -7,12 +7,12 @@
     "jsx": "react",
     "allowSyntheticDefaultImports": true,
     "strict": true,
-    "forceConsistentCasingInFileNames": true
-
+    "forceConsistentCasingInFileNames": true,
+    "importHelpers": true,
+    "strictNullChecks": true
   },
-  "include": [
-    "./src/**/*"
-  ],
+  "plugins": [{ "name": "typescript-tslint-plugin" }],
+  "include": ["./src/**/*"],
   "typeRoots": ["node_modules/@types"],
   "exclude": ["node_modules"]
 }
