@@ -3,7 +3,7 @@ module.exports = {
   transform: {
     '^.+\\.tsx?$': 'ts-jest',
   },
-  setupFiles: ['<rootDir>/jest.setup.js'],
+  setupFiles: ['./jest.setup.js'],
   // testMatch: ['**/*.test.{ts,tsx,js}'],
   // testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$',
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],

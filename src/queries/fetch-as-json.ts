@@ -5,6 +5,13 @@ const convertObjectToQueryString = (obj: any) => {
   return urlParams ? `?${urlParams}` : '';
 };
 
+const verifyStatusCode = (response: any) => {
+  if (response.ok) return response;
+  throw new Error(
+    `Error with code: ${response.status} and statusText: ${response.statusText}`
+  );
+};
+
 export const fetchAsJson = (
   endpoint: string,
   queryParams = {},
@@ -13,8 +20,10 @@ export const fetchAsJson = (
 ) => {
   const queryString = convertObjectToQueryString(queryParams);
   return fetch(`${endpoint}${queryString}`, { ...options, headers })
+    .then(verifyStatusCode)
     .then(response => response.json())
     .then(data => {
+      // tslint:disable-next-line: no-console
       console.log('Success', data);
     });
 };
