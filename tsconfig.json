@@ -9,7 +9,8 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "importHelpers": true,
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "moduleResolution": "node"
   },
   "plugins": [{ "name": "typescript-tslint-plugin" }],
   "include": ["./src/**/*"],
