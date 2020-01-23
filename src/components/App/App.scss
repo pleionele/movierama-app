@@ -1,11 +1,11 @@
-@import "../../styles/color.scss";
+@import '../../styles/color.scss';
 
 .app {
-    background-color: $dark-red;
-    padding: 2em;
-    text-align: center;
-    box-sizing: border-box;
-    &__text {
-        font-size:30px;
-    }
+  background-color: $dark-red;
+  padding: 2em;
+  text-align: center;
+  box-sizing: border-box;
+  &__text {
+    font-size: 30px;
+  }
 }
