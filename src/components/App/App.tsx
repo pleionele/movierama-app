@@ -23,13 +23,16 @@ export default class App extends React.Component<AppProps, any> {
     results &&
       results.results &&
       this.setState({ movieResults: results.results });
+    console.log('====>', results);
   }
   public render() {
     const { movieResults } = this.state;
     return (
       <div className="app" data-testid="appComponent">
         <span className="app__text">Hello {this.props.name}!</span>
-        {movieResults && <MovieList apiResults={movieResults} />}
+        <div className="layout">
+          {movieResults && <MovieList apiResults={movieResults} />}
+        </div>
         <button onClick={getPlayNowMovies}>Please fetch movies</button>
       </div>
     );

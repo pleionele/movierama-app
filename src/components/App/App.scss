@@ -9,3 +9,15 @@
     font-size: 30px;
   }
 }
+
+.layout {
+  box-sizing: border-box;
+  display: flex;
+  flex: initial;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: 4px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
