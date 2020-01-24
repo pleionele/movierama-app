@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './App.scss';
 import { getPlayNowMovies } from '../../api/get-playnow-movie';
-import { playNowMoviesService } from '../../service/playNowMoviesService';
+import { playNowMoviesService } from '../../services/playNowMovieService';
 import { MovieList } from '../Movie/Movie';
 interface AppProps {
   name: string;
@@ -25,7 +25,7 @@ export default class App extends React.Component<AppProps, any> {
       results.results &&
       this.setState({ movieResults: results.results });
     // tslint:disable-next-line: no-console
-    console.log('====>', results);
+    console.log(results);
   }
   public render() {
     const { movieResults } = this.state;

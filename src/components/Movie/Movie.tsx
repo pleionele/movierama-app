@@ -24,6 +24,7 @@ export const MovieList = ({ apiResults }: any) => {
         overview={match.overview}
         release_date={match.release_date}
         vote_average={match.vote_average}
+        // genres={match.filter(g => g.id===)}
       />
     </React.Fragment>
   ));
