@@ -12,6 +12,7 @@ export default class App extends React.Component<AppProps, any> {
     super(props);
     this.state = {
       movieResults: [],
+      movieGenres: [],
       page: 1,
     };
   }
@@ -23,17 +24,22 @@ export default class App extends React.Component<AppProps, any> {
     // tslint:disable-next-line: no-unused-expression
     results &&
       results.results &&
-      this.setState({ movieResults: results.results });
+      this.setState({
+        movieResults: results.results,
+        movieGenres: results.genres,
+      });
     // tslint:disable-next-line: no-console
-    console.log(results);
+    // console.log(results.genres);
   }
   public render() {
-    const { movieResults } = this.state;
+    const { movieResults, movieGenres } = this.state;
     return (
       <div className="app" data-testid="appComponent">
         <span className="app__text">Hello {this.props.name}!</span>
         <div className="layout">
-          {movieResults && <MovieList apiResults={movieResults} />}
+          {movieResults && (
+            <MovieList apiResults={movieResults} movieGenres={movieGenres} />
+          )}
         </div>
         <button onClick={getPlayNowMovies}>Please fetch movies</button>
       </div>
