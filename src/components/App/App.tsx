@@ -18,8 +18,11 @@ export default class App extends React.Component<AppProps, any> {
   async componentDidMount() {
     const results = await getPlayNowMovies();
     // tslint:disable-next-line: no-console
-    console.log('===>', results.results);
-    this.setState({ movieResults: results.results });
+    // console.log('===>', results.results);
+    // tslint:disable-next-line: no-unused-expression
+    results &&
+      results.results &&
+      this.setState({ movieResults: results.results });
   }
   public render() {
     const { movieResults } = this.state;
