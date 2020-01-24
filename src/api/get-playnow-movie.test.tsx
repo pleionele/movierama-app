@@ -8,7 +8,7 @@ describe('getPlayNowMovies', () => {
     expect(
       fetchAsJson
     ).toHaveBeenLastCalledWith(
-      'https://developers.themoviedb.org/3/movie/now_playing',
+      'https://api.themoviedb.org/3/movie/now_playing',
       { api_key: 'bc50218d91157b1ba4f142ef7baaa6a0' }
     );
   });

@@ -19,16 +19,10 @@ export const fetchAsJson = (
   options = { method: 'GET' }
 ) => {
   const queryString = convertObjectToQueryString(queryParams);
-  return (
-    fetch(`${endpoint}${queryString}`, { ...options, headers })
-      // return fetch(
-      //   `https://api.themoviedb.org/3/movie/now_playing?api_key=bc50218d91157b1ba4f142ef7baaa6a0`,
-      //   { ...options, headers }
-      // )
-      .then(verifyStatusCode)
-      .then(response => response.json())
-      .then(data => {
-        return data;
-      })
-  );
+  return fetch(`${endpoint}` + `${queryString}`, { ...options, headers })
+    .then(verifyStatusCode)
+    .then(response => response.json())
+    .then(data => {
+      return data;
+    });
 };
