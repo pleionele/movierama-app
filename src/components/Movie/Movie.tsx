@@ -20,7 +20,6 @@ export const MovieItem: React.FC<any> = props => {
 };
 
 export const MovieList = ({ apiResults, movieGenres }: any) => {
-  console.log('aaaaaa');
   return apiResults.map((match: any, index: any) => {
     try {
       const namedGenres = match.genre_ids.map((id: any) => {
