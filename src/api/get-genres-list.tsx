@@ -14,5 +14,6 @@ export const getGenresList = () => {
 
   return fetchAsJson(url, {
     api_key: Config.ApiKey,
-  }).then(response => setCache(url, response));
+  });
+    // .then(response => setCache(url, response));
 };
