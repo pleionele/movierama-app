@@ -3,7 +3,7 @@ import './App.scss';
 import { getPlayNowMovies } from '../../api/get-playnow-movies';
 import { playNowMoviesService } from '../../services/playNowMovieService';
 import { searchMovieService } from '../../services/searchMovieService';
-import { MovieList } from '../Movie/Movie';
+import { MovieList } from '../MovieList/MovieList';
 import { SearchBox } from '../Searchbox/SearchBox';
 import debounce from 'lodash.debounce';
 import { scrollingService } from '../../services/scrollingService';
