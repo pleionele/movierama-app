@@ -1,6 +1,6 @@
 import * as React from 'react';
 import './App.scss';
-import { getPlayNowMovies } from '../../api/get-playnow-movie';
+import { getPlayNowMovies } from '../../api/get-playnow-movies';
 import { playNowMoviesService } from '../../services/playNowMovieService';
 import { MovieList } from '../Movie/Movie';
 import { SearchBox } from '../Searchbox/SearchBox';
