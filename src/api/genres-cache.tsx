@@ -1,7 +1,8 @@
 export const getCache = (key: string) => {
   try {
-    // console.log('IN HERE');
-    return JSON.parse(sessionStorage.getItem(key) as string);
+    const returnedValue = sessionStorage.getItem(key);
+
+    return returnedValue && JSON.parse(returnedValue);
   } catch (e) {
     // tslint:disable-next-line: no-console
     console.warn('Error from cache', { error: e });
