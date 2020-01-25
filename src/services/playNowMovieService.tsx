@@ -1,5 +1,5 @@
 import { getGenresList } from '../api/get-genres-list';
-import { getPlayNowMovies } from '../api/get-playnow-movie';
+import { getPlayNowMovies } from '../api/get-playnow-movies';
 
 export const playNowMoviesService = () => {
   const playNowMovies: any = getPlayNowMovies();

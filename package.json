@@ -5,6 +5,8 @@
   "author": "pleionele <ep_di@hotmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@types/lodash.debounce": "^4.0.6",
+    "lodash.debounce": "^4.0.8",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "tslint": "^6.0.0",
