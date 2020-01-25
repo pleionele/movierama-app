@@ -2,6 +2,7 @@ import * as React from 'react';
 import './App.scss';
 import { getPlayNowMovies } from '../../api/get-playnow-movies';
 import { playNowMoviesService } from '../../services/playNowMovieService';
+import { searchMovieService } from '../../services/searchMovieService';
 import { MovieList } from '../Movie/Movie';
 import { SearchBox } from '../Searchbox/SearchBox';
 import debounce from 'lodash.debounce';
@@ -53,8 +54,15 @@ export default class App extends React.Component<AppProps, any> {
     const allmovies = movieResults.concat(newMovies.results);
     this.setState({ movieResults: allmovies, loading: false, page: page + 1 });
   };
-  searchHandler = debounce((searchInput: string) => {
+
+  searchHandler = debounce(async (searchInput: string) => {
     this.setState({ searchInput });
+
+    const searchResults = await searchMovieService(searchInput);
+    this.setState({
+      page: searchResults.page,
+      movieResults: searchResults.results,
+    });
   }, 500);
 
   public render() {
