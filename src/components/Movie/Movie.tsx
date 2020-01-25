@@ -18,18 +18,17 @@ export const MovieItem: React.FC<any> = props => {
     </div>
   );
 };
-// ● Poster
-// ● Year of release
-// ● Genre(s)
+
 export const MovieList = ({ apiResults, movieGenres }: any) => {
+  console.log('aaaaaa');
   return apiResults.map((match: any, index: any) => {
     try {
       const namedGenres = match.genre_ids.map((id: any) => {
         const elementPos = movieGenres
           .map((x: { id: any }) => x.id)
           .indexOf(id);
-        const objectFound = movieGenres[elementPos];
-        return objectFound.name;
+        const genreFound = movieGenres[elementPos];
+        return genreFound.name;
       });
 
       return (

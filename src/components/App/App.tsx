@@ -3,6 +3,7 @@ import './App.scss';
 import { getPlayNowMovies } from '../../api/get-playnow-movie';
 import { playNowMoviesService } from '../../services/playNowMovieService';
 import { MovieList } from '../Movie/Movie';
+import { getGenresList } from '../../api/get-genres-list';
 interface AppProps {
   name: string;
 }
@@ -29,7 +30,7 @@ export default class App extends React.Component<AppProps, any> {
         movieGenres: results.genres,
       });
     // tslint:disable-next-line: no-console
-    // console.log(results.genres);
+    console.log(results.genres);
   }
   public render() {
     const { movieResults, movieGenres } = this.state;
