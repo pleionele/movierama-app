@@ -3,7 +3,6 @@ import { Config } from '../config/default';
 import { getCache, setCache } from './genres-cache';
 
 export const getGenresList = () => {
-  console.log('aaaaa');
   const url = Config.MovieRamaUrl + Config.GenresListUrl;
   // const cached = getCache(url);
 
@@ -15,5 +14,5 @@ export const getGenresList = () => {
   return fetchAsJson(url, {
     api_key: Config.ApiKey,
   });
-    // .then(response => setCache(url, response));
+  // .then(response => setCache(url, response));
 };
