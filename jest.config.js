@@ -10,4 +10,17 @@ module.exports = {
   moduleNameMapper: {
     '^.+\\.(css|scss)$': 'identity-obj-proxy',
   },
+  collectCoverageFrom: [
+    '**/*.{ts,tsx,js,jsx}',
+    '!**/node_modules/**',
+    '!**/dist/**',
+  ],
+  coverageThreshold: {
+    global: {
+      branches: 60,
+      functions: 75,
+      lines: 60,
+      statements: -10,
+    },
+  },
 };

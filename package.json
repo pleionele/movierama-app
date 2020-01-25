@@ -51,7 +51,8 @@
   "scripts": {
     "start": "webpacK-dev-server --mode development --open --hot",
     "build": "webpack --mode production",
-    "test": "jest",
+    "test": "jest --coverage",
+    "test:watch": "jest --coverage --watch",
     "lint:ts": "tslint 'src/**/*.{ts,tsx,js}'"
   }
 }
