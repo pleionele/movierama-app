@@ -3,6 +3,7 @@ import './App.scss';
 import { getPlayNowMovies } from '../../api/get-playnow-movie';
 import { playNowMoviesService } from '../../services/playNowMovieService';
 import { MovieList } from '../Movie/Movie';
+import { SearchBox } from '../Searchbox/SearchBox';
 interface AppProps {
   name: string;
 }
@@ -15,6 +16,8 @@ export default class App extends React.Component<AppProps, any> {
       movieGenres: [],
       page: 1,
       loading: false,
+      searchInput: '',
+      // TOTALPAGES
     };
   }
 
@@ -48,12 +51,19 @@ export default class App extends React.Component<AppProps, any> {
     const allmovies = movieResults.concat(newMovies.results);
     this.setState({ movieResults: allmovies, loading: false, page: page + 1 });
   };
+  searchHandler = (value: string) => {
+    this.setState({ searchInput: value });
+  };
 
   public render() {
-    const { movieResults, movieGenres, loading } = this.state;
+    const { movieResults, movieGenres, loading, searchInput } = this.state;
     return (
       <div className="app" data-testid="appComponent">
         <span className="app__text">Hello {this.props.name}!</span>
+        <SearchBox
+          searchInput={searchInput}
+          searchHandler={this.searchHandler}
+        />
         <div className="layout">
           {movieResults && (
             <MovieList apiResults={movieResults} movieGenres={movieGenres} />

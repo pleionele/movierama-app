@@ -18,4 +18,11 @@ describe('<App />', () => {
     const { getByTestId } = render(<App name="world" />);
     expect(getByTestId('appComponent')).toBeTruthy();
   });
+
+  it('should have a search box', () => {
+    // @ts-ignore
+    playNowMoviesService.mockReturnValue(payloadPayNowMovie);
+    const { getByTestId } = render(<App name="world" />);
+    expect(getByTestId('appSearchBox')).toBeTruthy();
+  });
 });
