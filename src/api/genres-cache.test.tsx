@@ -36,15 +36,17 @@ describe('Cache', () => {
       // tslint:disable-next-line: no-console
       expect(console.warn).toHaveBeenCalledTimes(0);
     });
-    // it('should throw a warning if cache invalid', () => {
-    //   Storage.prototype.setItem = jest.fn();
-    //   // tslint:disable-next-line: no-console
-    //   console.warn = jest.fn();
+    it('should throw a warning if cache invalid', () => {
+      Storage.prototype.setItem = jest.fn().mockImplementationOnce(() => {
+        throw new Error('Error');
+      });
+      // tslint:disable-next-line: no-console
+      console.warn = jest.fn();
 
-    //   setCache('test', 15);
-    //   expect(Storage.prototype.setItem).toHaveBeenCalledTimes(1);
-    //   // tslint:disable-next-line: no-console
-    //   expect(console.warn).toHaveBeenCalledTimes(1);
-    // });
+      setCache('test', 15);
+      expect(Storage.prototype.setItem).toHaveBeenCalledTimes(1);
+      // tslint:disable-next-line: no-console
+      expect(console.warn).toHaveBeenCalledTimes(1);
+    });
   });
 });
