@@ -9,7 +9,7 @@ export const moreDetailsService = (id: number) => {
   const video: any = getMovieVideo(idToString);
 
   return Promise.all([reviews, similarMovies, video]).then(results => {
-    Object.defineProperties(
+    return Object.defineProperties(
       {},
       {
         reviews: { value: results[0].results },
@@ -17,6 +17,5 @@ export const moreDetailsService = (id: number) => {
         video: { value: results[2].results },
       }
     );
-    // return Object.assign(results[0], results[1], results[2]);
   });
 };

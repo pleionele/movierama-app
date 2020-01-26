@@ -13,12 +13,7 @@ interface MovieItemProps {
 }
 
 // @ts-ignore
-const MoreDetailsLazy = React.lazy(
-  () => import('../MoreDetails/MoreDetails'),
-  // @ts-ignore
-
-  'default'
-);
+const MoreDetailsLazy = React.lazy(() => import('../MoreDetails/MoreDetails'));
 
 export const MovieItem: React.FC<MovieItemProps> = props => {
   const {
@@ -47,7 +42,13 @@ export const MovieItem: React.FC<MovieItemProps> = props => {
       <ul>{genresItems}</ul>
       {displayMoreDetails && (
         <React.Suspense fallback={null}>
-          <MoreDetailsLazy movieId={movieId} />
+          <MoreDetailsLazy
+            movieId={movieId}
+            closePopup={async () => {
+              await setDisplayMoreDetails(false);
+              console.log('test', displayMoreDetails);
+            }}
+          />
         </React.Suspense>
       )}
     </div>

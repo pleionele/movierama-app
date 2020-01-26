@@ -53,7 +53,7 @@ describe('moreDetService', () => {
 
   // it('should return data in the right format', async done => {
   //   const movieDetails = await moreDetailsService(1212);
-  //   expect(movieDetails).resolves.toReturnWith('');
+  //   expect(movieDetails).toBe('');
   //   done();
   // });
 });
