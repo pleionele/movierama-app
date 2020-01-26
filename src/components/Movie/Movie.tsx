@@ -31,7 +31,10 @@ export const MovieItem: React.FC<MovieItemProps> = props => {
   const [displayMoreDetails, setDisplayMoreDetails] = React.useState(false);
   return (
     // tslint:disable-next-line: jsx-no-lambda
-    <div className="layout__item" onClick={() => setDisplayMoreDetails(true)}>
+    <div
+      className="movie-container__item"
+      onClick={() => setDisplayMoreDetails(true)}
+    >
       <h2>{title}</h2>
       <img src={Config.ImageUrl + poster_path} alt="movie poster" width={120} />
       <p>{overview}</p>

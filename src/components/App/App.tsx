@@ -76,10 +76,8 @@ export default class App extends React.Component<AppProps, any> {
           <h1 className="header">MovieRama</h1>
           <SearchBox searchHandler={this.searchHandler} />
         </header>
-        <div className="app" data-testid="appComponent">
-          {/* <span className="app__text">Hello {this.props.name}!</span>
-          <SearchBox searchHandler={this.searchHandler} /> */}
-          <div className="layout">
+        <div className="movie-container" data-testid="appComponent">
+          <div className="movie-grid">
             {movieResults && (
               <MovieList apiResults={movieResults} movieGenres={movieGenres} />
             )}

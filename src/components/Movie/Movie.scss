@@ -1,7 +1,9 @@
-.layout__item {
+@import '../../styles/color.scss';
+
+.movie-container__item {
   box-sizing: border-box;
   flex: initial;
-  padding-left: 8px;
-  border: 1px solid #e6e6e6;
-  background: #fff;
+  padding-left: 0.5em;
+  background: $white;
+  margin: 5px;
 }

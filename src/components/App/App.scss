@@ -17,7 +17,7 @@
   color: $white;
   align-items: center;
   border: 2px solid $white;
-  border-radius: 15px;
+  border-radius: 3em;
   text-align: center;
   height: 3em;
 }
@@ -29,6 +29,16 @@
   justify-content: center;
   flex-direction: column;
 }
+
 .header {
+  align-items: center;
+}
+
+.movie-container {
+  display: flex;
+  justify-content: space-between;
+}
+.movie-grid {
+  flex-direction: column;
   align-items: center;
 }
