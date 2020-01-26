@@ -26,12 +26,19 @@ jest.mock('../api/get-movie-video', () => {
   };
 });
 
-describe('playNowMovieService', () => {
+describe('moreDetService', () => {
+  beforeEach(() => {
+    (getMovieVideo as jest.Mock).mockReturnValue(
+      Promise.resolve(payloadMovieVideo)
+    );
+    (getMovieSimilar as jest.Mock).mockReturnValue(
+      Promise.resolve(payloadSimilarMovies)
+    );
+    (getMovieReviews as jest.Mock).mockReturnValue(
+      Promise.resolve(payloadMovieReviews)
+    );
+  });
   it('should make the correct api calls', () => {
-    (getMovieVideo as jest.Mock).mockReturnValue(payloadMovieVideo);
-    (getMovieSimilar as jest.Mock).mockReturnValue(payloadSimilarMovies);
-    (getMovieReviews as jest.Mock).mockReturnValue(payloadMovieReviews);
-
     moreDetailsService(1212);
     expect(getMovieVideo).toHaveBeenCalledTimes(1);
     expect(getMovieVideo).toHaveBeenCalledWith('1212');
@@ -42,4 +49,11 @@ describe('playNowMovieService', () => {
     expect(getMovieSimilar).toHaveBeenCalledTimes(1);
     expect(getMovieSimilar).toHaveBeenCalledWith('1212');
   });
+  // TODO Unit for promiseall
+
+  // it('should return data in the right format', async done => {
+  //   const movieDetails = await moreDetailsService(1212);
+  //   expect(movieDetails).resolves.toReturnWith('');
+  //   done();
+  // });
 });
