@@ -2,7 +2,7 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-  entry: ['babel-polyfill', './src/index.tsx'],
+  entry: ['./src/index.tsx'],
   output: {
     filename: 'bundle.js',
     path: __dirname + '/dist',
@@ -16,7 +16,12 @@ module.exports = {
       { test: /\.scss$/, use: ['style-loader', 'css-loader', 'sass-loader'] },
       { test: /\.tsx?$/, loader: 'babel-loader' },
       { test: /\.tsx?$/, loader: 'ts-loader' },
-      { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' },
+      {
+        enforce: 'pre',
+        test: /\.js$/,
+        loader: 'source-map-loader',
+        exclude: /node_modules/,
+      },
     ],
   },
   plugins: [
