@@ -1,4 +1,4 @@
-import { movieDetailsService } from './movieDetailsService';
+import { moreDetailsService } from './moreDetailsService';
 import { getMovieReviews } from '../api/get-movie-reviews';
 import { getMovieSimilar } from '../api/get-movie-similar';
 import { getMovieVideo } from '../api/get-movie-video';
@@ -28,7 +28,7 @@ describe('playNowMovieService', () => {
     (getMovieSimilar as jest.Mock).mockReturnValue(payloadPayNowMovie);
     (getMovieReviews as jest.Mock).mockReturnValue(payloadPayNowMovie);
 
-    movieDetailsService('1212');
+    moreDetailsService('1212');
     expect(getMovieVideo).toHaveBeenCalledTimes(1);
     expect(getMovieReviews).toHaveBeenCalledTimes(1);
     expect(getMovieSimilar).toHaveBeenCalledTimes(1);

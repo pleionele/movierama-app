@@ -12,7 +12,6 @@ export const MovieList = ({ apiResults, movieGenres }: any) => {
         const genreFound = movieGenres[elementPos];
         return genreFound.name;
       });
-
       return (
         <React.Fragment key={index}>
           <MovieItem
@@ -22,6 +21,7 @@ export const MovieList = ({ apiResults, movieGenres }: any) => {
             vote_average={match.vote_average}
             genres={namedGenres}
             poster_path={match.poster_path}
+            movieId={match.id}
           />
         </React.Fragment>
       );
