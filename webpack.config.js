@@ -1,4 +1,5 @@
 const HTMLWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   entry: ['./src/index.tsx'],
@@ -24,6 +25,7 @@ module.exports = {
     ],
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new HTMLWebpackPlugin({
       template: './index.html',
     }),
