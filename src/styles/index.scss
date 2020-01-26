@@ -1,17 +1,13 @@
-// html {
-//   font-size: 10px;
-// }
-
-// body {
-//   font-size: 1.8rem;
-//   margin: 0 auto;
-//   -webkit-font-smoothing: antialiased;
-//   -moz-osx-font-smoothing: grayscale;
-// }
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.content {
+  background-color: #eaedf0;
+  height: 600px;
 }
 
 /* Mobile Styles */
@@ -33,8 +29,9 @@
   body {
     background-color: #b2d6ff; /* Blue */
   }
-}
 
-:root {
-  --unit_medium: 8px;
+  .page {
+    width: 960px;
+    margin: 0 auto;
+  }
 }
