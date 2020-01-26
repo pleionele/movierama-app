@@ -4,7 +4,7 @@ import { MovieItem } from '../Movie/Movie';
 export const MovieList = ({ apiResults, movieGenres }: any) => {
   return apiResults.map((match: any, index: any) => {
     try {
-      console.log('aaaaaaa');
+      // console.log('aaaaaaa');
       const namedGenres = match.genre_ids.map((id: any) => {
         const elementPos = movieGenres
           .map((x: { id: any }) => x.id)

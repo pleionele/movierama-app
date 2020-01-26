@@ -36,7 +36,7 @@ export default class App extends React.Component<AppProps, any> {
         movieResults: results.results,
         movieGenres: results.genres,
       });
-    console.log(results.results);
+    // console.log(results.results);
   }
 
   handleScroll = () => {
@@ -65,7 +65,7 @@ export default class App extends React.Component<AppProps, any> {
       page: searchResults.page,
       movieResults: searchResults.results,
     });
-    console.log(searchResults.results);
+    // console.log(searchResults.results);
   }, 500);
 
   public render() {
