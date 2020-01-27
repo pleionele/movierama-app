@@ -26,30 +26,38 @@ export const MovieItem: React.FC<MovieItemProps> = props => {
     movieId,
   } = props;
   const genresItems = genres.map((name: string, index: number) => (
-    <li key={index}>{name}</li>
+    <div key={index} className="genres__item">
+      {name}
+    </div>
   ));
   const [displayMoreDetails, setDisplayMoreDetails] = React.useState(false);
   return (
     // tslint:disable-next-line: jsx-no-lambda
-    <div
-      className="movie-container__item"
-      onClick={() => setDisplayMoreDetails(true)}
-    >
-      <h2>{title}</h2>
-      <img src={Config.ImageUrl + poster_path} alt="movie poster" width={120} />
-      <p>{overview}</p>
-      <div onClick={() => setDisplayMoreDetails(true)}>
-        Release Date: {release_date}
+    <div className="movie" onClick={() => setDisplayMoreDetails(true)}>
+      <div className="movie__title">
+        <h2>{title}</h2>
       </div>
-      <div>Vote Average: {vote_average}</div>
-      <ul>{genresItems}</ul>
+      <div className="movie__overview">
+        <img
+          src={Config.ImageUrl + poster_path}
+          alt="movie poster"
+          width={120}
+        />
+        <div className="movie__overview__details">
+          <div data-testid="releaseYear">Year: {release_date}</div>
+          <div data-testid="voteAverage">Vote Average: {vote_average} /10</div>
+          <div data-testid="genres">{genresItems}</div>
+        </div>
+      </div>
+      <p>{overview}</p>
+
       {displayMoreDetails && (
         <React.Suspense fallback={null}>
           <MoreDetailsLazy
             movieId={movieId}
             closePopup={async () => {
               await setDisplayMoreDetails(false);
-              console.log('test', displayMoreDetails);
+              // console.log('test', displayMoreDetails);
             }}
           />
         </React.Suspense>
