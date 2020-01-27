@@ -33,33 +33,38 @@ export const MovieItem: React.FC<MovieItemProps> = props => {
   const [displayMoreDetails, setDisplayMoreDetails] = React.useState(false);
   return (
     // tslint:disable-next-line: jsx-no-lambda
-    <div className="movie" onClick={() => setDisplayMoreDetails(true)}>
+    <div className="movie w3-modal" onClick={() => setDisplayMoreDetails(true)}>
       <div className="movie__title">
         <h2>{title}</h2>
       </div>
-      <div className="movie__overview">
-        <img
-          src={Config.ImageUrl + poster_path}
-          alt="movie poster"
-          width={120}
-        />
-        <div className="movie__overview__details">
+      <div className="movie__wrapper">
+        <div className="container">
+          <img
+            className="container__image"
+            src={Config.ImageUrl + poster_path}
+            alt="movie poster"
+            width={120}
+          />
+          <p className="container__text">{overview}</p>
+        </div>
+        <div className="section movie__overview">
           <div data-testid="releaseYear">Year: {release_date}</div>
-          <div data-testid="voteAverage">Vote Average: {vote_average} /10</div>
+          <div data-testid="voteAverage">Votes: {vote_average} /10</div>
           <div data-testid="genres">{genresItems}</div>
         </div>
       </div>
-      <p>{overview}</p>
 
       {displayMoreDetails && (
         <React.Suspense fallback={null}>
-          <MoreDetailsLazy
-            movieId={movieId}
-            closePopup={async () => {
-              await setDisplayMoreDetails(false);
-              // console.log('test', displayMoreDetails);
-            }}
-          />
+          <div className="w3-modal-content w3-animate-top">
+            <MoreDetailsLazy
+              movieId={movieId}
+              closePopup={async () => {
+                await setDisplayMoreDetails(false);
+                // console.log('test', displayMoreDetails);
+              }}
+            />
+          </div>
         </React.Suspense>
       )}
     </div>

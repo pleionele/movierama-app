@@ -20,6 +20,12 @@
   border-radius: 3em;
   text-align: center;
   height: 3em;
+  -webkit-transition: width 2s; /* For Safari 3.1 to 6.0 */
+  transition: width 2s;
+  width: 100px;
+}
+.search:hover {
+  width: 300px;
 }
 .header-container {
   background-color: $dim-grey;
