@@ -13,7 +13,7 @@ interface MovieItemProps {
 }
 
 // @ts-ignore
-const MoreDetailsLazy = React.lazy(() => import('../MoreDetails/MoreDetails'));
+const MoreDetailsLazy = React.lazy(() => import('../MoreDetails/MoreDetailsB'));
 
 export const MovieItem: React.FC<MovieItemProps> = props => {
   const {

@@ -1,65 +1,126 @@
-html,
-body,
-div + div {
-  width: 100vw;
-  height: 100vh;
-}
+// html,
+// body,
+// div + div {
+//   width: 100vw;
+//   height: 100vh;
+// }
 
-div + div {
-  list-style: none;
-  position: relative;
+// div + div {
+//   list-style: none;
+//   position: relative;
+//   display: flex;
+//   flex-direction: row;
+//   flex-wrap: nowrap;
+//   align-items: stretch;
+//   overflow: hidden;
+// }
+
+// article div {
+//   text-align: left;
+//   width: 58vw;
+// }
+
+// div + div:hover article {
+//   flex: initial;
+//   width: 10%;
+// }
+
+// div + div article:hover {
+//   width: 60%;
+// }
+
+// article > div {
+//   opacity: 0;
+//   transition: opacity 0.2s ease 0;
+// }
+
+// div + div article:hover > div {
+//   opacity: 1;
+//   transition: opacity 0.3s ease 0.3s;
+// }
+
+// @media (max-width: 900px) {
+//   div + div article {
+//     padding: 2vh 3vw;
+//   }
+
+//   div + div article > h2 {
+//     transform: rotate(90deg);
+//     bottom: 23vh;
+//     min-width: 12em;
+//     text-align: left;
+//     transform: rotate(-90deg);
+//     transform-origin: 0 0 0;
+//     opacity: 1;
+//   }
+
+//   div + div article:hover > h2 {
+//     opacity: 0;
+//   }
+
+//   article div {
+//     max-height: calc(72%);
+//     overflow-y: auto;
+//   }
+// }
+
+header {
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-items: stretch;
-  overflow: hidden;
+  justify-content: center;
+  align-content: center;
+  padding: 15px;
+  background-color: #3c3c3c;
+  // border: 3px solid #f43c3c;
 }
 
-article div {
-  text-align: left;
-  width: 58vw;
+header h1 {
+  color: #eee;
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
 }
-
-div + div:hover article {
-  flex: initial;
-  width: 10%;
+.acr__container {
+  width: 100%;
+  max-width: 768%;
+  margin: 0 auto;
+  padding: 15px;
 }
+.acr__item {
+  margin: 15px;
+  padding: 15px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 
-div + div article:hover {
-  width: 60%;
-}
-
-article > div {
-  opacity: 0;
-  transition: opacity 0.2s ease 0;
-}
-
-div + div article:hover > div {
-  opacity: 1;
-  transition: opacity 0.3s ease 0.3s;
-}
-
-@media (max-width: 900px) {
-  div + div article {
-    padding: 2vh 3vw;
+  .open &__header {
+    margin-bottom: 50px;
+  }
+  &__header {
+    position: relative;
+    font-size: 20px;
+    padding-right: 80px;
+    transition: all 0.4s ease;
   }
 
-  div + div article > h2 {
-    transform: rotate(90deg);
-    bottom: 23vh;
-    min-width: 12em;
-    text-align: left;
-    transform: rotate(-90deg);
-    transform-origin: 0 0 0;
+  &__header::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    transition: all 0.4s ease;
+  }
+
+  .open &__body {
+    max-height: 1000px;
     opacity: 1;
   }
-
-  div + div article:hover > h2 {
+  &__body {
     opacity: 0;
-  }
-
-  article div {
-    max-height: calc(72%);
-    overflow-y: auto;
+    max-height: 0;
+    overflow-y: hidden;
+    transition: all 0.6s ease;
   }
 }
