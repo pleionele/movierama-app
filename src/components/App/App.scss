@@ -1,31 +1,44 @@
 @import '../../styles/color.scss';
 
-.app {
-  background-color: $dark-red;
-  padding: 2em;
-  text-align: center;
-  box-sizing: border-box;
-  &__text {
-    font-size: 30px;
-  }
+.page {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.layout {
-  box-sizing: border-box;
-  display: flex;
-  flex: initial;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin-left: 4px;
-  justify-content: center;
-  align-items: center;
+.section {
   width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.search-box {
-  float: right;
-  padding: 6px;
-  margin-top: 8px;
-  margin-right: 16px;
-  border: none;
-  font-size: 17px;
+
+.search {
+  color: $white;
+  align-items: center;
+  border: 2px solid $white;
+  border-radius: 3em;
+  text-align: center;
+  height: 3em;
+}
+.header-container {
+  background-color: $dim-grey;
+  letter-spacing: 2px;
+  color: $white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.header {
+  align-items: center;
+}
+
+.movie-container {
+  display: flex;
+  justify-content: space-between;
+}
+.movie-grid {
+  flex-direction: column;
+  align-items: center;
 }

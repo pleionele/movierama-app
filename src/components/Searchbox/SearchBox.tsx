@@ -9,8 +9,8 @@ export const SearchBox = (props: SearchBoxProps) => {
     <input
       aria-label="searchInput"
       type="search"
-      className="search-box"
-      placeholder="Search Movies"
+      className="search"
+      placeholder="Search movies"
       // tslint:disable-next-line: jsx-no-lambda
       onChange={(e: any) => {
         searchHandler(e.target.value);

@@ -1,40 +1,39 @@
-// html {
-//   font-size: 10px;
-// }
+@import './color.scss';
 
-// body {
-//   font-size: 1.8rem;
-//   margin: 0 auto;
-//   -webkit-font-smoothing: antialiased;
-//   -moz-osx-font-smoothing: grayscale;
-// }
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.content {
+  background-color: #eaedf0;
+  height: 600px;
 }
 
 /* Mobile Styles */
 @media only screen and (max-width: 400px) {
   body {
-    background-color: #f09a9d; /* Red */
+    background-color: $dim-grey;
   }
 }
 
 /* Tablet Styles */
 @media only screen and (min-width: 401px) and (max-width: 960px) {
   body {
-    background-color: #f5cf8e; /* Yellow */
+    background-color: $dim-grey;
   }
 }
 
 /* Desktop Styles */
 @media only screen and (min-width: 961px) {
   body {
-    background-color: #b2d6ff; /* Blue */
+    background-color: $dim-grey;
   }
-}
 
-:root {
-  --unit_medium: 8px;
+  .page {
+    width: 960px;
+    margin: 0 auto;
+  }
 }

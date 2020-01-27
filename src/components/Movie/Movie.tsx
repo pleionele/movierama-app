@@ -2,7 +2,20 @@ import * as React from 'react';
 import './Movie.scss';
 import { Config } from '../../config/default';
 
-export const MovieItem: React.FC<any> = props => {
+interface MovieItemProps {
+  title: string;
+  overview: string;
+  release_date: string;
+  vote_average: number;
+  genres: [string];
+  poster_path: string;
+  movieId: number;
+}
+
+// @ts-ignore
+const MoreDetailsLazy = React.lazy(() => import('../MoreDetails/MoreDetails'));
+
+export const MovieItem: React.FC<MovieItemProps> = props => {
   const {
     title,
     overview,
@@ -10,19 +23,45 @@ export const MovieItem: React.FC<any> = props => {
     vote_average,
     genres,
     poster_path,
+    movieId,
   } = props;
   const genresItems = genres.map((name: string, index: number) => (
-    <li key={index}>{name}</li>
+    <div key={index} className="genres__item">
+      {name}
+    </div>
   ));
-
+  const [displayMoreDetails, setDisplayMoreDetails] = React.useState(false);
   return (
-    <div className="layout__item">
-      <h2>{title}</h2>
-      <img src={Config.ImageUrl + poster_path} alt="movie poster" width={120} />
+    // tslint:disable-next-line: jsx-no-lambda
+    <div className="movie" onClick={() => setDisplayMoreDetails(true)}>
+      <div className="movie__title">
+        <h2>{title}</h2>
+      </div>
+      <div className="movie__overview">
+        <img
+          src={Config.ImageUrl + poster_path}
+          alt="movie poster"
+          width={120}
+        />
+        <div className="movie__overview__details">
+          <div data-testid="releaseYear">Year: {release_date}</div>
+          <div data-testid="voteAverage">Vote Average: {vote_average} /10</div>
+          <div data-testid="genres">{genresItems}</div>
+        </div>
+      </div>
       <p>{overview}</p>
-      <div>Release Date: {release_date}</div>
-      <div>Vote Average: {vote_average}</div>
-      <ul>{genresItems}</ul>
+
+      {displayMoreDetails && (
+        <React.Suspense fallback={null}>
+          <MoreDetailsLazy
+            movieId={movieId}
+            closePopup={async () => {
+              await setDisplayMoreDetails(false);
+              // console.log('test', displayMoreDetails);
+            }}
+          />
+        </React.Suspense>
+      )}
     </div>
   );
 };

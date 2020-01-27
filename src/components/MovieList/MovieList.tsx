@@ -4,7 +4,6 @@ import { MovieItem } from '../Movie/Movie';
 export const MovieList = ({ apiResults, movieGenres }: any) => {
   return apiResults.map((match: any, index: any) => {
     try {
-      // console.log('aaaaaaa');
       const namedGenres = match.genre_ids.map((id: any) => {
         const elementPos = movieGenres
           .map((x: { id: any }) => x.id)
@@ -12,7 +11,6 @@ export const MovieList = ({ apiResults, movieGenres }: any) => {
         const genreFound = movieGenres[elementPos];
         return genreFound.name;
       });
-
       return (
         <React.Fragment key={index}>
           <MovieItem
@@ -22,6 +20,7 @@ export const MovieList = ({ apiResults, movieGenres }: any) => {
             vote_average={match.vote_average}
             genres={namedGenres}
             poster_path={match.poster_path}
+            movieId={match.id}
           />
         </React.Fragment>
       );

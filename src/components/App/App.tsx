@@ -71,15 +71,19 @@ export default class App extends React.Component<AppProps, any> {
   public render() {
     const { movieResults, movieGenres, loading, searchInput } = this.state;
     return (
-      <div className="app" data-testid="appComponent">
-        <span className="app__text">Hello {this.props.name}!</span>
-        <SearchBox searchHandler={this.searchHandler} />
-        <div className="layout">
-          {movieResults && (
-            <MovieList apiResults={movieResults} movieGenres={movieGenres} />
-          )}
+      <div className="page">
+        <header className="section header-container">
+          <h1 className="header">MovieRama</h1>
+          <SearchBox searchHandler={this.searchHandler} />
+        </header>
+        <div className="movie-container" data-testid="appComponent">
+          <div className="movie-grid">
+            {movieResults && (
+              <MovieList apiResults={movieResults} movieGenres={movieGenres} />
+            )}
+          </div>
+          {loading && <div>Please wait for Loading</div>}
         </div>
-        {loading && <div>Please wait for Loading</div>}
       </div>
     );
   }
