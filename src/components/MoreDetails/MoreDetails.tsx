@@ -3,6 +3,8 @@ import { moreDetailsService } from '../../services/moreDetailsService';
 import { Config } from '../../config/default';
 import './style.scss';
 import ReviewList from '../Review/ReviewList';
+import YouTube from 'react-youtube';
+
 // ● Video Trailer (if any)
 // ● Reviews (up to 2)
 // ● Similar Movies
@@ -37,26 +39,55 @@ const MoreDetails: React.FC<MoreDetailsProps> = props => {
         <div>
           {isloading && <div> Please wait..</div>}
           {!isloading && (
-            <div data-testid="moreDetails" className="popup">
-              <div data-testid="youtubeVideo" className="popup_inner">
-                <h2>More details</h2>
-                <button
-                  // tslint:disable-next-line: jsx-no-lambda
-                  onClick={() => {
-                    props.closePopup();
-                    setDisplay(false);
-                  }}
-                >
-                  Close me
-                </button>
-                {/* <iframe src={Config.TrailerUrl + data?.video[0].key} /> */}
-                <ReviewList reviews={data?.reviews} />
+            <section
+              className="modal--show"
+              id="modal-text"
+              tabIndex={-1}
+              role="dialog"
+              aria-labelledby="modal-label"
+              aria-hidden="true"
+            >
+              <div className="modal-inner">
+                <header id="modal-label">More details</header>
+                <div className="modal-content">
+                  <YouTube videoId={data?.video[0].key} />
+                </div>
+                <footer>
+                  <ReviewList reviews={data?.reviews} />
+                </footer>
               </div>
-            </div>
+            </section>
           )}
         </div>
       )}
     </React.Fragment>
+    // <React.Fragment>
+    //   {isDisplaying && (
+    //     <div>
+    //       {isloading && <div> Please wait..</div>}
+    //       {!isloading && (
+    //         <div data-testid="moreDetails" className="popup">
+    //           <div data-testid="youtubeVideo" className="popup_inner">
+    //             <h2>More details</h2>
+    //             <button
+    //               // tslint:disable-next-line: jsx-no-lambda
+    //               onClick={() => {
+    //                 props.closePopup();
+    //                 setDisplay(false);
+    //               }}
+    //             >
+    //               Close me
+    //             </button>
+    //             <YouTube videoId={data?.video[0].key} />
+
+    //             {/* <iframe src={Config.TrailerUrl + data?.video[0].key} /> */}
+    //             <ReviewList reviews={data?.reviews} />
+    //           </div>
+    //         </div>
+    //       )}
+    //     </div>
+    //   )}
+    // </React.Fragment>
   );
 };
 
