@@ -49,7 +49,7 @@ const MoreDetails: React.FC<MoreDetailsProps> = props => {
                 >
                   Close me
                 </button>
-                {/* <iframe src={Config.TrailerUrl + data?.video[0].key} /> */}
+                <iframe src={Config.YoutubeTrailerUrl + data?.video[0].key} />
                 <ReviewList reviews={data?.reviews} />
               </div>
             </div>
