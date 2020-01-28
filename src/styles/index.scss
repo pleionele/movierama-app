@@ -16,6 +16,8 @@
 @media only screen and (max-width: 400px) {
   body {
     background-color: $dim-grey;
+    -webkit-font-smoothing: antialised;
+    --moz-osx-font-smoothing: grayscale;
   }
 }
 
@@ -23,6 +25,8 @@
 @media only screen and (min-width: 401px) and (max-width: 960px) {
   body {
     background-color: $dim-grey;
+    -webkit-font-smoothing: antialised;
+    --moz-osx-font-smoothing: grayscale;
   }
 }
 
@@ -30,6 +34,8 @@
 @media only screen and (min-width: 961px) {
   body {
     background-color: $dim-grey;
+    -webkit-font-smoothing: antialised;
+    --moz-osx-font-smoothing: grayscale;
   }
 
   .page {
