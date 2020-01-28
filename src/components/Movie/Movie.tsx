@@ -13,7 +13,7 @@ interface MovieItemProps {
 }
 
 // @ts-ignore
-const MoreDetailsLazy = React.lazy(() => import('../MoreDetails/MoreDetailsB'));
+const MoreDetailsLazy = React.lazy(() => import('../MoreDetails/MoreDetails'));
 
 export const MovieItem: React.FC<MovieItemProps> = props => {
   const {
@@ -33,7 +33,7 @@ export const MovieItem: React.FC<MovieItemProps> = props => {
   const [displayMoreDetails, setDisplayMoreDetails] = React.useState(false);
   return (
     // tslint:disable-next-line: jsx-no-lambda
-    <div className="movie w3-modal" onClick={() => setDisplayMoreDetails(true)}>
+    <div className="movie" onClick={() => setDisplayMoreDetails(true)}>
       <div className="movie__title">
         <h2>{title}</h2>
       </div>
@@ -53,18 +53,15 @@ export const MovieItem: React.FC<MovieItemProps> = props => {
           <div data-testid="genres">{genresItems}</div>
         </div>
       </div>
-
       {displayMoreDetails && (
         <React.Suspense fallback={null}>
-          <div className="w3-modal-content w3-animate-top">
-            <MoreDetailsLazy
-              movieId={movieId}
-              closePopup={async () => {
-                await setDisplayMoreDetails(false);
-                // console.log('test', displayMoreDetails);
-              }}
-            />
-          </div>
+          <MoreDetailsLazy
+            movieId={movieId}
+            // tslint:disable-next-line: jsx-no-lambda
+            closePopup={() => {
+              setDisplayMoreDetails(false);
+            }}
+          />
         </React.Suspense>
       )}
     </div>
