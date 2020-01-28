@@ -11,7 +11,7 @@ const Review = (props: ReviewItem) => {
   const { content, author } = props;
   return (
     <div data-testid="review" className="review">
-      <div>{author} said:</div>
+      <strong>{author} said:</strong>
       <p>{content}</p>
     </div>
   );
