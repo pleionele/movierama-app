@@ -7,14 +7,23 @@
   // padding-bottom: 0.5em;
   background: $white;
   padding-top: 0.5em;
+  cursor: pointer;
 }
 
 .genres {
+  border: 2px solid black;
+  border-radius: 4px;
+  // padding: 5px 10px;
+  margin: 5px;
+  flex-direction: row;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   &__item {
-    border: 2px solid $dim-grey;
-    text-align: center;
-    justify-content: space-between;
-    display: flex;
+    // border: 2px solid $dim-grey;
+    // text-align: center;
+    // justify-content: space-between;
+    // display: flex;
     margin: 5px;
   }
 }
@@ -33,6 +42,7 @@
     flex: 1 1 auto;
   }
 }
+
 /* Desktop Styles */
 @media only screen and (min-width: 961px) {
   .movie {
@@ -49,18 +59,20 @@
       align-self: flex-start;
     }
     &__text {
-      margin: 3em;
+      margin: 1em;
       box-sizing: border-box;
       flex: 1 1 auto;
+      text-align: start;
+      font-size: 17px;
+      font-weight: 300;
+      line-height: 28px;
+      margin-bottom: 10px;
     }
   }
 
   .genres {
+    padding: 5px 10px;
     &__item {
-      border: 2px solid $dim-grey;
-      text-align: center;
-      justify-content: space-between;
-      display: flex;
       margin: 5px;
     }
   }

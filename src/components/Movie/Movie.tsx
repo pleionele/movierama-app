@@ -50,7 +50,9 @@ export const MovieItem: React.FC<MovieItemProps> = props => {
         <div className="section movie__overview">
           <div data-testid="releaseYear">Year: {release_date}</div>
           <div data-testid="voteAverage">Votes: {vote_average} /10</div>
-          <div data-testid="genres">{genresItems}</div>
+          <div data-testid="genres" className="genres">
+            {genresItems}
+          </div>
         </div>
       </div>
       {displayMoreDetails && (
