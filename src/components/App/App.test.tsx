@@ -6,6 +6,7 @@ import * as payloadPayNowMovie from '../../api/stubs/payload-pay-now-movie.json'
 import { playNowMoviesService } from '../../services/playNowMovieService';
 import { searchMovieService } from '../../services/searchMovieService';
 import debounce from 'lodash.debounce';
+import { act } from 'react-dom/test-utils';
 
 jest.mock('../../services/playNowMovieService', () => {
   return {
@@ -34,17 +35,24 @@ describe('<App />', () => {
   it('should display', () => {
     // @ts-ignore
     playNowMoviesService.mockReturnValue(payloadPayNowMovie);
-    const { getByTestId } = render(<App name="world" />);
+    const { getByTestId } = render(<App />);
     expect(getByTestId('appComponent')).toBeTruthy();
   });
 
   it('should have a search box', () => {
     // @ts-ignore
     playNowMoviesService.mockReturnValue(payloadPayNowMovie);
-    const { getByTestId } = render(<App name="world" />);
+    const { getByTestId } = render(<App />);
     expect(getByTestId('appSearchBox')).toBeTruthy();
   });
 
+  it('should match the snapshot', () => {
+    act(async () => {
+      const { asFragment } = render(<App />);
+      await Promise.resolve();
+      expect(asFragment()).toMatchSnapshot();
+    });
+  });
   // it('should show results from the search api when the user tries to search', () => {
   //   const { getByTestId } = render(<App name="world" />);
   //   // expect(searchMovieService).toHaveBeenCalledTimes(0);

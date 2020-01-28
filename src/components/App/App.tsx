@@ -8,12 +8,8 @@ import { SearchBox } from '../Searchbox/SearchBox';
 import debounce from 'lodash.debounce';
 import { scrollingService } from '../../services/scrollingService';
 
-interface AppProps {
-  name: string;
-}
-
-export default class App extends React.Component<AppProps, any> {
-  constructor(props: AppProps) {
+export default class App extends React.Component<any, any> {
+  constructor(props: any) {
     super(props);
     this.state = {
       movieResults: [],
@@ -36,7 +32,6 @@ export default class App extends React.Component<AppProps, any> {
         movieResults: results.results,
         movieGenres: results.genres,
       });
-    // console.log(results.results);
   }
 
   handleScroll = () => {

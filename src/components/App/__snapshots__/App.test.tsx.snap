@@ -1,0 +1,1250 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> should match the snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="page"
+  >
+    <header
+      class="section header-container"
+    >
+      <h1
+        class="header"
+      >
+        MovieRama
+      </h1>
+      <input
+        aria-label="searchInput"
+        class="search"
+        data-testid="appSearchBox"
+        placeholder="Search movies"
+        type="search"
+      />
+    </header>
+    <div
+      class="movie-container"
+      data-testid="appComponent"
+    >
+      <div
+        class="movie-grid"
+      >
+        <div
+          class="movie"
+        >
+          <div
+            class="movie__title"
+          >
+            <h2>
+              Suicide Squad
+            </h2>
+          </div>
+          <div
+            class="movie__wrapper"
+          >
+            <div
+              class="container"
+            >
+              <img
+                alt="movie poster"
+                class="container__image"
+                src="https://image.tmdb.org/t/p/original//e1mjopzAS2KNsvpbpahQ1a6SkSn.jpg"
+                width="120"
+              />
+              <p
+                class="container__text"
+              >
+                From DC Comics comes the Suicide Squad, an antihero team of incarcerated supervillains who act as deniable assets for the United States government, undertaking high-risk black ops missions in exchange for commuted prison sentences.
+              </p>
+            </div>
+            <div
+              class="section movie__overview"
+            >
+              <div
+                data-testid="releaseYear"
+              >
+                Year: 2016
+              </div>
+              <div
+                data-testid="voteAverage"
+              >
+                Votes: 5.91 /10
+              </div>
+              <div
+                class="genres"
+                data-testid="genres"
+              >
+                <div
+                  class="genres__item"
+                >
+                  Fantasy
+                </div>
+                <div
+                  class="genres__item"
+                >
+                  Action
+                </div>
+                <div
+                  class="genres__item"
+                >
+                  Crime
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="movie"
+        >
+          <div
+            class="movie__title"
+          >
+            <h2>
+              Jason Bourne
+            </h2>
+          </div>
+          <div
+            class="movie__wrapper"
+          >
+            <div
+              class="container"
+            >
+              <img
+                alt="movie poster"
+                class="container__image"
+                src="https://image.tmdb.org/t/p/original//lFSSLTlFozwpaGlO31OoUeirBgQ.jpg"
+                width="120"
+              />
+              <p
+                class="container__text"
+              >
+                The most dangerous former operative of the CIA is drawn out of hiding to uncover hidden truths about his past.
+              </p>
+            </div>
+            <div
+              class="section movie__overview"
+            >
+              <div
+                data-testid="releaseYear"
+              >
+                Year: 2016
+              </div>
+              <div
+                data-testid="voteAverage"
+              >
+                Votes: 5.25 /10
+              </div>
+              <div
+                class="genres"
+                data-testid="genres"
+              >
+                <div
+                  class="genres__item"
+                >
+                  Action
+                </div>
+                <div
+                  class="genres__item"
+                >
+                  Thriller
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="movie"
+        >
+          <div
+            class="movie__title"
+          >
+            <h2>
+              Mechanic: Resurrection
+            </h2>
+          </div>
+          <div
+            class="movie__wrapper"
+          >
+            <div
+              class="container"
+            >
+              <img
+                alt="movie poster"
+                class="container__image"
+                src="https://image.tmdb.org/t/p/original//tgfRDJs5PFW20Aoh1orEzuxW8cN.jpg"
+                width="120"
+              />
+              <p
+                class="container__text"
+              >
+                Arthur Bishop thought he had put his murderous past behind him when his most formidable foe kidnaps the love of his life. Now he is forced to travel the globe to complete three impossible assassinations, and do what he does best, make them look like accidents.
+              </p>
+            </div>
+            <div
+              class="section movie__overview"
+            >
+              <div
+                data-testid="releaseYear"
+              >
+                Year: 2016
+              </div>
+              <div
+                data-testid="voteAverage"
+              >
+                Votes: 4.59 /10
+              </div>
+              <div
+                class="genres"
+                data-testid="genres"
+              >
+                <div
+                  class="genres__item"
+                >
+                  Crime
+                </div>
+                <div
+                  class="genres__item"
+                >
+                  Action
+                </div>
+                <div
+                  class="genres__item"
+                >
+                  Thriller
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="movie"
+        >
+          <div
+            class="movie__title"
+          >
+            <h2>
+              Nerve
+            </h2>
+          </div>
+          <div
+            class="movie__wrapper"
+          >
+            <div
+              class="container"
+            >
+              <img
+                alt="movie poster"
+                class="container__image"
+                src="https://image.tmdb.org/t/p/original//3ioyAtm0wXDyPy330Y7mJAJEHpU.jpg"
+                width="120"
+              />
+              <p
+                class="container__text"
+              >
+                A high school senior finds herself immersed in an online game of truth or dare, where her every move starts to be manipulated by an anonymous community of "watchers."
+              </p>
+            </div>
+            <div
+              class="section movie__overview"
+            >
+              <div
+                data-testid="releaseYear"
+              >
+                Year: 2016
+              </div>
+              <div
+                data-testid="voteAverage"
+              >
+                Votes: 6.84 /10
+              </div>
+              <div
+                class="genres"
+                data-testid="genres"
+              >
+                <div
+                  class="genres__item"
+                >
+                  Drama
+                </div>
+                <div
+                  class="genres__item"
+                >
+                  Thriller
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="movie"
+        >
+          <div
+            class="movie__title"
+          >
+            <h2>
+              Bad Moms
+            </h2>
+          </div>
+          <div
+            class="movie__wrapper"
+          >
+            <div
+              class="container"
+            >
+              <img
+                alt="movie poster"
+                class="container__image"
+                src="https://image.tmdb.org/t/p/original//3S7V2Jd2G61LltoCsYUj4GwON5p.jpg"
+                width="120"
+              />
+              <p
+                class="container__text"
+              >
+                A woman with a seemingly perfect life - a great marriage, overachieving kids, beautiful home, stunning looks and still holding down a career. However she's over-worked, over committed and exhausted to the point that she's about to snap. Fed up, she joins forces with two other over-stressed moms and all go on a quest to liberate themselves from conventional responsibilities, going on a wild un-mom like binge of freedom, fun and self-indulgence - putting them on a collision course with PTA Queen Bee Gwendolyn and her clique of devoted perfect moms.
+              </p>
+            </div>
+            <div
+              class="section movie__overview"
+            >
+              <div
+                data-testid="releaseYear"
+              >
+                Year: 2016
+              </div>
+              <div
+                data-testid="voteAverage"
+              >
+                Votes: 5.49 /10
+              </div>
+              <div
+                class="genres"
+                data-testid="genres"
+              >
+                <div
+                  class="genres__item"
+                >
+                  Comedy
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="movie"
+        >
+          <div
+            class="movie__title"
+          >
+            <h2>
+              Ben-Hur
+            </h2>
+          </div>
+          <div
+            class="movie__wrapper"
+          >
+            <div
+              class="container"
+            >
+              <img
+                alt="movie poster"
+                class="container__image"
+                src="https://image.tmdb.org/t/p/original//sRxazAAodkAWVPJighRAsls2zCo.jpg"
+                width="120"
+              />
+              <p
+                class="container__text"
+              >
+                A falsely accused nobleman survives years of slavery to take vengeance on his best friend who betrayed him.
+              </p>
+            </div>
+            <div
+              class="section movie__overview"
+            >
+              <div
+                data-testid="releaseYear"
+              >
+                Year: 2016
+              </div>
+              <div
+                data-testid="voteAverage"
+              >
+                Votes: 3.83 /10
+              </div>
+              <div
+                class="genres"
+                data-testid="genres"
+              >
+                <div
+                  class="genres__item"
+                >
+                  Adventure
+                </div>
+                <div
+                  class="genres__item"
+                >
+                  History
+                </div>
+                <div
+                  class="genres__item"
+                >
+                  Drama
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="movie"
+        >
+          <div
+            class="movie__title"
+          >
+            <h2>
+              Imperium
+            </h2>
+          </div>
+          <div
+            class="movie__wrapper"
+          >
+            <div
+              class="container"
+            >
+              <img
+                alt="movie poster"
+                class="container__image"
+                src="https://image.tmdb.org/t/p/original//aRRLpsusORQxOpFkZvXdk00TkoY.jpg"
+                width="120"
+              />
+              <p
+                class="container__text"
+              >
+                Nate Foster, a young, idealistic FBI agent, goes undercover to take down a radical white supremacy terrorist group. The bright up-and-coming analyst must confront the challenge of sticking to a new identity while maintaining his real principles as he navigates the dangerous underworld of white supremacy. Inspired by real events.
+              </p>
+            </div>
+            <div
+              class="section movie__overview"
+            >
+              <div
+                data-testid="releaseYear"
+              >
+                Year: 2016
+              </div>
+              <div
+                data-testid="voteAverage"
+              >
+                Votes: 6.05 /10
+              </div>
+              <div
+                class="genres"
+                data-testid="genres"
+              >
+                <div
+                  class="genres__item"
+                >
+                  Crime
+                </div>
+                <div
+                  class="genres__item"
+                >
+                  Drama
+                </div>
+                <div
+                  class="genres__item"
+                >
+                  Thriller
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="movie"
+        >
+          <div
+            class="movie__title"
+          >
+            <h2>
+              Southside With You
+            </h2>
+          </div>
+          <div
+            class="movie__wrapper"
+          >
+            <div
+              class="container"
+            >
+              <img
+                alt="movie poster"
+                class="container__image"
+                src="https://image.tmdb.org/t/p/original//4pUIQO6OqbzxrFLGMDf2dlplSR9.jpg"
+                width="120"
+              />
+              <p
+                class="container__text"
+              >
+                Southside With You chronicles a single day in the summer of 1989 when the future president of the United States, Barack Obama, wooed his future First Lady on an epic first date across Chicago's South Side.
+              </p>
+            </div>
+            <div
+              class="section movie__overview"
+            >
+              <div
+                data-testid="releaseYear"
+              >
+                Year: 2016
+              </div>
+              <div
+                data-testid="voteAverage"
+              >
+                Votes: 3.12 /10
+              </div>
+              <div
+                class="genres"
+                data-testid="genres"
+              >
+                <div
+                  class="genres__item"
+                >
+                  Romance
+                </div>
+                <div
+                  class="genres__item"
+                >
+                  Drama
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="movie"
+        >
+          <div
+            class="movie__title"
+          >
+            <h2>
+              War Dogs
+            </h2>
+          </div>
+          <div
+            class="movie__wrapper"
+          >
+            <div
+              class="container"
+            >
+              <img
+                alt="movie poster"
+                class="container__image"
+                src="https://image.tmdb.org/t/p/original//wJXku1YhMKeuzYNEHux7XtaYPsE.jpg"
+                width="120"
+              />
+              <p
+                class="container__text"
+              >
+                Based on a true story, “War Dogs” follows two friends in their early 20s living in Miami during the first Iraq War who exploit a little-known government initiative that allows small businesses to bid on U.S. Military contracts. Starting small, they begin raking in big money and are living the high life. But the pair gets in over their heads when they land a 300 million dollar deal to arm the Afghan Military—a deal that puts them in business with some very shady people, not the least of which turns out to be the U.S. Government.
+              </p>
+            </div>
+            <div
+              class="section movie__overview"
+            >
+              <div
+                data-testid="releaseYear"
+              >
+                Year: 2016
+              </div>
+              <div
+                data-testid="voteAverage"
+              >
+                Votes: 5.08 /10
+              </div>
+              <div
+                class="genres"
+                data-testid="genres"
+              >
+                <div
+                  class="genres__item"
+                >
+                  War
+                </div>
+                <div
+                  class="genres__item"
+                >
+                  Comedy
+                </div>
+                <div
+                  class="genres__item"
+                >
+                  Drama
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="movie"
+        >
+          <div
+            class="movie__title"
+          >
+            <h2>
+              Pete's Dragon
+            </h2>
+          </div>
+          <div
+            class="movie__wrapper"
+          >
+            <div
+              class="container"
+            >
+              <img
+                alt="movie poster"
+                class="container__image"
+                src="https://image.tmdb.org/t/p/original//e9Rzr8Hhu3pqdJtdDLC52PerLk1.jpg"
+                width="120"
+              />
+              <p
+                class="container__text"
+              >
+                Pete is a mysterious 10-year-old with no family and no home who claims to live in the woods with a giant, green dragon named Elliott. With the help of Natalie, an 11-year-old girl whose father Jack owns the local lumber mill, forest ranger Grace sets out to determine where Pete came from, where he belongs, and the truth about this dragon.
+              </p>
+            </div>
+            <div
+              class="section movie__overview"
+            >
+              <div
+                data-testid="releaseYear"
+              >
+                Year: 2016
+              </div>
+              <div
+                data-testid="voteAverage"
+              >
+                Votes: 4.85 /10
+              </div>
+              <div
+                class="genres"
+                data-testid="genres"
+              >
+                <div
+                  class="genres__item"
+                >
+                  Adventure
+                </div>
+                <div
+                  class="genres__item"
+                >
+                  Family
+                </div>
+                <div
+                  class="genres__item"
+                >
+                  Fantasy
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="movie"
+        >
+          <div
+            class="movie__title"
+          >
+            <h2>
+              A Man Called Ove
+            </h2>
+          </div>
+          <div
+            class="movie__wrapper"
+          >
+            <div
+              class="container"
+            >
+              <img
+                alt="movie poster"
+                class="container__image"
+                src="https://image.tmdb.org/t/p/original//pXqnqw4V1Rly2HEacfl07d5DcUE.jpg"
+                width="120"
+              />
+              <p
+                class="container__text"
+              >
+                59 year-old Ove is the block’s grumpy man. Several years ago he was deposed as president of the condominium association, but he could not give a damn about being deposed and therefore keeps looking over the neighborhood with an iron fist. When pregnant Parvaneh and her family move into the terraced house opposite Ove and accidentally back into Ove’s mailbox it sets off the beginning of an unexpected change in his life.
+              </p>
+            </div>
+            <div
+              class="section movie__overview"
+            >
+              <div
+                data-testid="releaseYear"
+              >
+                Year: 2016
+              </div>
+              <div
+                data-testid="voteAverage"
+              >
+                Votes: 5.57 /10
+              </div>
+              <div
+                class="genres"
+                data-testid="genres"
+              >
+                <div
+                  class="genres__item"
+                >
+                  Comedy
+                </div>
+                <div
+                  class="genres__item"
+                >
+                  Drama
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="movie"
+        >
+          <div
+            class="movie__title"
+          >
+            <h2>
+              Kubo and the Two Strings
+            </h2>
+          </div>
+          <div
+            class="movie__wrapper"
+          >
+            <div
+              class="container"
+            >
+              <img
+                alt="movie poster"
+                class="container__image"
+                src="https://image.tmdb.org/t/p/original//3Kr9CIIMcXTPlm6cdZ9y3QTe4Y7.jpg"
+                width="120"
+              />
+              <p
+                class="container__text"
+              >
+                In the epic fantasy, scruffy, kindhearted Kubo ekes out a humble living while devotedly caring for his mother in their sleepy shoreside village. It is a quiet existence – until a spirit from the past catches up with him to enforce an age-old vendetta. Suddenly on the run from gods and monsters, Kubo’s chance for survival rests on finding the magical suit of armor once worn by his fallen father, the greatest samurai the world has ever known. Summoning courage, Kubo embarks on a thrilling odyssey as he faces his family’s history, navigates the elements, and bravely fights for the earth and the stars.
+              </p>
+            </div>
+            <div
+              class="section movie__overview"
+            >
+              <div
+                data-testid="releaseYear"
+              >
+                Year: 2016
+              </div>
+              <div
+                data-testid="voteAverage"
+              >
+                Votes: 6.93 /10
+              </div>
+              <div
+                class="genres"
+                data-testid="genres"
+              >
+                <div
+                  class="genres__item"
+                >
+                  Adventure
+                </div>
+                <div
+                  class="genres__item"
+                >
+                  Animation
+                </div>
+                <div
+                  class="genres__item"
+                >
+                  Fantasy
+                </div>
+                <div
+                  class="genres__item"
+                >
+                  Family
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="movie"
+        >
+          <div
+            class="movie__title"
+          >
+            <h2>
+              Lights Out
+            </h2>
+          </div>
+          <div
+            class="movie__wrapper"
+          >
+            <div
+              class="container"
+            >
+              <img
+                alt="movie poster"
+                class="container__image"
+                src="https://image.tmdb.org/t/p/original//rxXA5vwJElXQ8BgrB0pocUcuqFA.jpg"
+                width="120"
+              />
+              <p
+                class="container__text"
+              >
+                When Rebecca left home, she thought she left her childhood fears behind. Growing up, she was never really sure of what was and wasn’t real when the lights went out…and now her little brother, Martin, is experiencing the same unexplained and terrifying events that had once tested her sanity and threatened her safety. A frightening entity with a mysterious attachment to their mother, Sophie, has reemerged.
+              </p>
+            </div>
+            <div
+              class="section movie__overview"
+            >
+              <div
+                data-testid="releaseYear"
+              >
+                Year: 2016
+              </div>
+              <div
+                data-testid="voteAverage"
+              >
+                Votes: 6.11 /10
+              </div>
+              <div
+                class="genres"
+                data-testid="genres"
+              >
+                <div
+                  class="genres__item"
+                >
+                  Horror
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="movie"
+        >
+          <div
+            class="movie__title"
+          >
+            <h2>
+              XOXO
+            </h2>
+          </div>
+          <div
+            class="movie__wrapper"
+          >
+            <div
+              class="container"
+            >
+              <img
+                alt="movie poster"
+                class="container__image"
+                src="https://image.tmdb.org/t/p/original//3mCcVbVLz23MhCngELFihX2uSwb.jpg"
+                width="120"
+              />
+              <p
+                class="container__text"
+              >
+                XOXO follows six strangers whose lives collide in one frenetic, dream-chasing, hopelessly romantic night.
+              </p>
+            </div>
+            <div
+              class="section movie__overview"
+            >
+              <div
+                data-testid="releaseYear"
+              >
+                Year: 2016
+              </div>
+              <div
+                data-testid="voteAverage"
+              >
+                Votes: 7 /10
+              </div>
+              <div
+                class="genres"
+                data-testid="genres"
+              >
+                <div
+                  class="genres__item"
+                >
+                  Drama
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="movie"
+        >
+          <div
+            class="movie__title"
+          >
+            <h2>
+              Batman: The Killing Joke
+            </h2>
+          </div>
+          <div
+            class="movie__wrapper"
+          >
+            <div
+              class="container"
+            >
+              <img
+                alt="movie poster"
+                class="container__image"
+                src="https://image.tmdb.org/t/p/original//zm0ODjtfJfJW0W269LqsQl5OhJ8.jpg"
+                width="120"
+              />
+              <p
+                class="container__text"
+              >
+                As Batman hunts for the escaped Joker, the Clown Prince of Crime attacks the Gordon family to prove a diabolical point mirroring his own fall into madness. Based on the graphic novel by Alan Moore and Brian Bolland.
+              </p>
+            </div>
+            <div
+              class="section movie__overview"
+            >
+              <div
+                data-testid="releaseYear"
+              >
+                Year: 2016
+              </div>
+              <div
+                data-testid="voteAverage"
+              >
+                Votes: 5.91 /10
+              </div>
+              <div
+                class="genres"
+                data-testid="genres"
+              >
+                <div
+                  class="genres__item"
+                >
+                  Action
+                </div>
+                <div
+                  class="genres__item"
+                >
+                  Animation
+                </div>
+                <div
+                  class="genres__item"
+                >
+                  Crime
+                </div>
+                <div
+                  class="genres__item"
+                >
+                  Drama
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="movie"
+        >
+          <div
+            class="movie__title"
+          >
+            <h2>
+              The Intervention
+            </h2>
+          </div>
+          <div
+            class="movie__wrapper"
+          >
+            <div
+              class="container"
+            >
+              <img
+                alt="movie poster"
+                class="container__image"
+                src="https://image.tmdb.org/t/p/original//4J2Vc32juKTSdqm273HDKHsWO42.jpg"
+                width="120"
+              />
+              <p
+                class="container__text"
+              >
+                A weekend getaway for four couples takes a sharp turn when one of the couples discovers the entire trip was orchestrated to host an intervention on their marriage.
+              </p>
+            </div>
+            <div
+              class="section movie__overview"
+            >
+              <div
+                data-testid="releaseYear"
+              >
+                Year: 2016
+              </div>
+              <div
+                data-testid="voteAverage"
+              >
+                Votes: 3.79 /10
+              </div>
+              <div
+                class="genres"
+                data-testid="genres"
+              >
+                <div
+                  class="genres__item"
+                >
+                  Comedy
+                </div>
+                <div
+                  class="genres__item"
+                >
+                  Drama
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="movie"
+        >
+          <div
+            class="movie__title"
+          >
+            <h2>
+              Max Steel
+            </h2>
+          </div>
+          <div
+            class="movie__wrapper"
+          >
+            <div
+              class="container"
+            >
+              <img
+                alt="movie poster"
+                class="container__image"
+                src="https://image.tmdb.org/t/p/original//eZJYbODPWMRe6aQ1KtKHMb5ZOnx.jpg"
+                width="120"
+              />
+              <p
+                class="container__text"
+              >
+                The adventures of teenager Max McGrath and alien companion Steel, who must harness and combine their tremendous new powers to evolve into the turbo-charged superhero Max Steel.
+              </p>
+            </div>
+            <div
+              class="section movie__overview"
+            >
+              <div
+                data-testid="releaseYear"
+              >
+                Year: 2016
+              </div>
+              <div
+                data-testid="voteAverage"
+              >
+                Votes: 4.22 /10
+              </div>
+              <div
+                class="genres"
+                data-testid="genres"
+              >
+                <div
+                  class="genres__item"
+                >
+                  Science Fiction
+                </div>
+                <div
+                  class="genres__item"
+                >
+                  Action
+                </div>
+                <div
+                  class="genres__item"
+                >
+                  Adventure
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="movie"
+        >
+          <div
+            class="movie__title"
+          >
+            <h2>
+              Sniper: Ghost Shooter
+            </h2>
+          </div>
+          <div
+            class="movie__wrapper"
+          >
+            <div
+              class="container"
+            >
+              <img
+                alt="movie poster"
+                class="container__image"
+                src="https://image.tmdb.org/t/p/original//v0krYaMdqD9uxFuFiWhEyKKIaw5.jpg"
+                width="120"
+              />
+              <p
+                class="container__text"
+              >
+                Elite snipers Brandon Beckett (Chad Michael Collins) and Richard Miller (Billy Zane) tasked with protecting a gas pipeline from terrorists looking to make a statement. When battles with the enemy lead to snipers being killed by a ghost shooter who knows their exact location, tensions boil as a security breach is suspected. Is there someone working with the enemy on the inside? Is the mission a front for other activity? Is the Colonel pulling the strings?
+              </p>
+            </div>
+            <div
+              class="section movie__overview"
+            >
+              <div
+                data-testid="releaseYear"
+              >
+                Year: 2016
+              </div>
+              <div
+                data-testid="voteAverage"
+              >
+                Votes: 4.76 /10
+              </div>
+              <div
+                class="genres"
+                data-testid="genres"
+              >
+                <div
+                  class="genres__item"
+                >
+                  Action
+                </div>
+                <div
+                  class="genres__item"
+                >
+                  Drama
+                </div>
+                <div
+                  class="genres__item"
+                >
+                  War
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="movie"
+        >
+          <div
+            class="movie__title"
+          >
+            <h2>
+              White Girl
+            </h2>
+          </div>
+          <div
+            class="movie__wrapper"
+          >
+            <div
+              class="container"
+            >
+              <img
+                alt="movie poster"
+                class="container__image"
+                src="https://image.tmdb.org/t/p/original//c4mvBk9cRAkyp9DpzlOBSmeuzG6.jpg"
+                width="120"
+              />
+              <p
+                class="container__text"
+              >
+                Summer, New York City. A college girl falls hard for a guy she just met. After a night of partying goes wrong, she goes to wild extremes to get him back.
+              </p>
+            </div>
+            <div
+              class="section movie__overview"
+            >
+              <div
+                data-testid="releaseYear"
+              >
+                Year: 2016
+              </div>
+              <div
+                data-testid="voteAverage"
+              >
+                Votes: 1.88 /10
+              </div>
+              <div
+                class="genres"
+                data-testid="genres"
+              >
+                <div
+                  class="genres__item"
+                >
+                  Drama
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="movie"
+        >
+          <div
+            class="movie__title"
+          >
+            <h2>
+              Hands of Stone
+            </h2>
+          </div>
+          <div
+            class="movie__wrapper"
+          >
+            <div
+              class="container"
+            >
+              <img
+                alt="movie poster"
+                class="container__image"
+                src="https://image.tmdb.org/t/p/original//1SWIUZp4Gi2B6VxajpPWKhkbTMF.jpg"
+                width="120"
+              />
+              <p
+                class="container__text"
+              >
+                The legendary Roberto Duran and his equally legendary trainer Ray Arcel change each other's lives.
+              </p>
+            </div>
+            <div
+              class="section movie__overview"
+            >
+              <div
+                data-testid="releaseYear"
+              >
+                Year: 2016
+              </div>
+              <div
+                data-testid="voteAverage"
+              >
+                Votes: 3.75 /10
+              </div>
+              <div
+                class="genres"
+                data-testid="genres"
+              >
+                <div
+                  class="genres__item"
+                >
+                  Drama
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

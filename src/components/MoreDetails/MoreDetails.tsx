@@ -80,7 +80,7 @@ const MoreDetails: React.FC<MoreDetailsProps> = props => {
                 <div
                   className={'acr__item ' + (accordion[0].open ? 'open' : '')}
                   onClick={toggleTrailer}
-                  data-testId="youtubeTrailer"
+                  data-testid="youtubeTrailer"
                 >
                   <div className="acr__item__header">Trailer</div>
                   <YouTube
@@ -92,7 +92,7 @@ const MoreDetails: React.FC<MoreDetailsProps> = props => {
                 <div
                   onClick={toggleReviews}
                   className={'acr__item ' + (accordion[1].open ? 'open' : '')}
-                  data-testId="reviewsList"
+                  data-testid="reviewsList"
                 >
                   <div className="acr__item__header">Reviews</div>
                   <div className="acr__item__body">
@@ -102,7 +102,7 @@ const MoreDetails: React.FC<MoreDetailsProps> = props => {
                 <div
                   onClick={toggleSimilarMovies}
                   className={'acr__item ' + (accordion[2].open ? 'open' : '')}
-                  data-testId="similarMovies"
+                  data-testid="similarMovies"
                 >
                   <div className="acr__item__header">Similar Movies</div>
                   <div className="acr__item__body">

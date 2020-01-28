@@ -5,7 +5,7 @@ import './styles/index.scss';
 
 ReactDOM.render(
   <div>
-    <App name="world" />
+    <App />
   </div>,
   document.getElementById('app')
 );
