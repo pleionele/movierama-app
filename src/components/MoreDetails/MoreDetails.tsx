@@ -3,10 +3,8 @@ import { moreDetailsService } from '../../services/moreDetailsService';
 import './MoreDetails.scss';
 import ReviewList from '../Review/ReviewList';
 import YouTube from 'react-youtube';
+import { SimilarMoviesList } from '../SimilarMovies/SimilarMovies';
 
-// ● Video Trailer (if any)
-// ● Reviews (up to 2)
-// ● Similar Movies
 interface MoreDetailsProps {
   movieId: number;
   closePopup: () => void;
@@ -64,6 +62,7 @@ const MoreDetails: React.FC<MoreDetailsProps> = props => {
         // tslint:disable-next-line: no-console
         .catch(error => console.log(error))
         .finally(() => {
+          console.log(returnedData);
           setData(returnedData);
           setLoading(false);
         });
@@ -103,9 +102,9 @@ const MoreDetails: React.FC<MoreDetailsProps> = props => {
                   onClick={toggleSimilarMovies}
                   className={'acr__item ' + (accordion[2].open ? 'open' : '')}
                 >
-                  <div className="acr__item__header">Reviews</div>
+                  <div className="acr__item__header">Similar Movies</div>
                   <div className="acr__item__body">
-                    <ReviewList reviews={data?.reviews} />
+                    <SimilarMoviesList movies={data?.similarMovies} />
                   </div>
                 </div>
               </div>
