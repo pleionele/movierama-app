@@ -65,7 +65,6 @@ export default class App extends React.Component<AppProps, any> {
       page: searchResults.page,
       movieResults: searchResults.results,
     });
-    // console.log(searchResults.results);
   }, 500);
 
   public render() {

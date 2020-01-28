@@ -5,16 +5,17 @@ interface SearchBoxProps {
 }
 export const SearchBox = (props: SearchBoxProps) => {
   const { searchHandler } = props;
+
+  const searchTerm = (e: any) => {
+    searchHandler(e.target.value);
+  };
   return (
     <input
       aria-label="searchInput"
       type="search"
       className="search"
       placeholder="Search movies"
-      // tslint:disable-next-line: jsx-no-lambda
-      onChange={(e: any) => {
-        searchHandler(e.target.value);
-      }}
+      onChange={searchTerm}
       data-testid="appSearchBox"
     />
   );
