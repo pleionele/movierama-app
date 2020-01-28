@@ -21,7 +21,7 @@ const ReviewList = (props: any) => {
   const { reviews } = props;
 
   return reviews.length === 0 ? (
-    <div>No available reviews</div>
+    <div data-testid="noReviews">No available reviews</div>
   ) : (
     reviews.map((item: ReviewItem, index: number) => {
       // TODO Change this logic
