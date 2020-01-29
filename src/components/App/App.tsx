@@ -62,6 +62,7 @@ export default class App extends React.Component<any, any> {
         movieResults: searchResults.results,
       });
     } catch (e) {
+      // tslint:disable-next-line: no-console
       console.warn(e);
     }
   }, 500);
