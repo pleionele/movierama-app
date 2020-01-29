@@ -59,4 +59,20 @@ describe('More Details', () => {
       expect(element).toBeVisible();
     });
   });
+
+  it('should toggle reviews tab', async () => {
+    await wait(() => {
+      const { getByTestId } = render(<MoreDetails movieId={1323} />);
+      const element = getByTestId('reviewsList');
+      fireEvent(
+        element,
+        new MouseEvent('click', {
+          bubbles: true,
+          cancelable: true,
+        })
+      );
+
+      expect(element).toBeVisible();
+    });
+  });
 });
