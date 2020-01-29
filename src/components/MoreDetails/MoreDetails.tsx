@@ -40,16 +40,9 @@ const MoreDetails: React.FC<MoreDetailsProps> = props => {
       })
     );
   };
-  const toggleTrailer = () => {
-    toggleTabs(0);
-  };
-
-  const toggleReviews = () => {
-    toggleTabs(1);
-  };
-
-  const toggleSimilarMovies = () => {
-    toggleTabs(2);
+  const ToggleEventHandler = (e: React.MouseEvent, index: number) => {
+    e.stopPropagation();
+    toggleTabs(index);
   };
 
   useEffect(() => {
@@ -79,7 +72,8 @@ const MoreDetails: React.FC<MoreDetailsProps> = props => {
               <div className="acr__container">
                 <div
                   className={'acr__item ' + (accordion[0].open ? 'open' : '')}
-                  onClick={toggleTrailer}
+                  // tslint:disable-next-line: jsx-no-lambda
+                  onClick={e => ToggleEventHandler(e, 0)}
                   data-testid="youtubeTrailer"
                 >
                   <div className="acr__item__header">Trailer</div>
@@ -90,7 +84,8 @@ const MoreDetails: React.FC<MoreDetailsProps> = props => {
                   />
                 </div>
                 <div
-                  onClick={toggleReviews}
+                  // tslint:disable-next-line: jsx-no-lambda
+                  onClick={e => ToggleEventHandler(e, 1)}
                   className={'acr__item ' + (accordion[1].open ? 'open' : '')}
                   data-testid="reviewsList"
                 >
@@ -100,7 +95,8 @@ const MoreDetails: React.FC<MoreDetailsProps> = props => {
                   </div>
                 </div>
                 <div
-                  onClick={toggleSimilarMovies}
+                  // tslint:disable-next-line: jsx-no-lambda
+                  onClick={e => ToggleEventHandler(e, 2)}
                   className={'acr__item ' + (accordion[2].open ? 'open' : '')}
                   data-testid="similarMovies"
                 >
