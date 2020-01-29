@@ -1,4 +1,4 @@
-@import '../../styles/color.scss';
+@import '../../styles/default.scss';
 
 .page {
   display: flex;
@@ -20,7 +20,7 @@ input[type='search']::-webkit-search-results-decoration {
 }
 
 .search {
-  font-size: 16px;
+  font-size: $font-size;
   color: $dim-grey;
   align-items: center;
   border: 2px solid $white;
