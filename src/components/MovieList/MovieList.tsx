@@ -9,18 +9,18 @@ export const MovieList = ({ apiResults, movieGenres }: any) => {
           .map((x: { id: any }) => x.id)
           .indexOf(id);
         const genreFound = movieGenres[elementPos];
-        return genreFound.name;
+        return genreFound && genreFound.name;
       });
       return (
         <React.Fragment key={index}>
           <MovieItem
-            title={match.title}
-            overview={match.overview}
-            release_date={match.release_date}
-            vote_average={match.vote_average}
+            title={match && match.title}
+            overview={match && match.overview}
+            release_date={match && match.release_date}
+            vote_average={match && match.vote_average}
             genres={namedGenres}
-            poster_path={match.poster_path}
-            movieId={match.id}
+            poster_path={match && match.poster_path}
+            movieId={match && match.id}
           />
         </React.Fragment>
       );

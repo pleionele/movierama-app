@@ -48,22 +48,25 @@ export default class App extends React.Component<any, any> {
 
     const { movieResults, page, searchInput } = this.state;
     const newMovies = await apiServiceHandler(searchInput, page + 1);
-    const allmovies = movieResults.concat(newMovies.results);
-    this.setState({ movieResults: allmovies, loading: false, page: page + 1 });
+    if (newMovies) {
+      const allmovies = movieResults.concat(newMovies.results);
+      this.setState({
+        movieResults: allmovies,
+        loading: false,
+        page: page + 1,
+      });
+    }
   };
 
   searchHandler = debounce(async (searchInput: string) => {
-    try {
-      this.setState({ searchInput });
+    this.setState({ searchInput });
 
-      const searchResults = await apiServiceHandler(searchInput);
+    const searchResults = await apiServiceHandler(searchInput);
+    if (searchResults) {
       this.setState({
         page: searchResults.page,
         movieResults: searchResults.results,
       });
-    } catch (e) {
-      // tslint:disable-next-line: no-console
-      console.warn(e);
     }
   }, 500);
 
