@@ -6,10 +6,12 @@ import * as payloadPayNowMovie from '../../api/stubs/payload-pay-now-movie.json'
 import { playNowMoviesService } from '../../services/playNowMovieService';
 import { getMovieSearchResults } from '../../api/get-movie-search-results';
 import { getPlayNowMovies } from '../../api/get-playnow-movies';
+import { fetchAsJson } from '../../queries/fetch-as-json';
 
 import { act } from 'react-dom/test-utils';
 jest.mock('../../api/get-movie-search-results');
 jest.mock('../../api/get-playnow-movies');
+jest.mock('../../queries/fetch-as-json');
 
 jest.mock('../../services/playNowMovieService', () => {
   return {
@@ -22,8 +24,8 @@ describe('<App />', () => {
     (getPlayNowMovies as jest.Mock).mockImplementation(() => {
       Promise.resolve(payloadPayNowMovie);
     });
-    (getMovieSearchResults as jest.Mock).mockImplementationOnce(() =>
-      Promise.resolve({ test: 'test' })
+    (getMovieSearchResults as jest.Mock).mockImplementation(() =>
+      Promise.resolve(payloadPayNowMovie)
     );
   });
   afterEach(() => {
@@ -73,5 +75,14 @@ describe('<App />', () => {
       expect(getMovieSearchResults).toHaveBeenCalledTimes(1);
       expect(getPlayNowMovies).toHaveBeenCalledTimes(1);
     });
+  });
+
+  it('should fetch more data when user reaches the bottom of the page', async () => {
+    const component = render(<App />);
+    await wait(() => {
+      fireEvent.scroll(window, { target: { scrollY: 100 } });
+      expect(getMovieSearchResults).toHaveBeenCalled();
+    });
+    expect(getMovieSearchResults).toHaveBeenCalledWith('test', 2);
   });
 });

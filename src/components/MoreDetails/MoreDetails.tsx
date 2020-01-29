@@ -67,6 +67,7 @@ const MoreDetails: React.FC<MoreDetailsProps> = props => {
         });
     })();
   }, []);
+  // TODO Check if video exists
 
   return (
     <Fragment>
