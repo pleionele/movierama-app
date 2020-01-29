@@ -1,6 +1,7 @@
 import * as React from 'react';
 import './Movie.scss';
 import { Config } from '../../config/default';
+import MoreDetails from '../MoreDetails/MoreDetails';
 
 interface MovieItemProps {
   title: string;
@@ -12,7 +13,7 @@ interface MovieItemProps {
   movieId: number;
 }
 
-const MoreDetailsLazy = React.lazy(() => import('../MoreDetails/MoreDetails'));
+// const MoreDetailsLazy = React.lazy(() => import('../MoreDetails/MoreDetails'));
 
 export const MovieItem: React.FC<MovieItemProps> = props => {
   const {
@@ -30,9 +31,16 @@ export const MovieItem: React.FC<MovieItemProps> = props => {
     </div>
   ));
   const [displayMoreDetails, setDisplayMoreDetails] = React.useState(false);
+
+  const toggleDisplay = () => {
+    setDisplayMoreDetails(!displayMoreDetails);
+  };
   return (
-    // tslint:disable-next-line: jsx-no-lambda
-    <div className="movie" onClick={() => setDisplayMoreDetails(true)}>
+    <div
+      className="movie"
+      onClick={toggleDisplay}
+      // onMouseLeave={() => setDisplayMoreDetails(false)}
+    >
       <div className="movie__title">
         <h2>{title}</h2>
       </div>
@@ -57,14 +65,15 @@ export const MovieItem: React.FC<MovieItemProps> = props => {
         </div>
       </div>
       {displayMoreDetails && (
-        <React.Suspense fallback={null}>
-          <div
-            data-testid="moreDetails"
-            // onMouseLeave={() => setDisplayMoreDetails(false)}
-          >
-            <MoreDetailsLazy movieId={movieId} />
-          </div>
-        </React.Suspense>
+        // <React.Suspense fallback={null}>
+        <div
+          data-testid="moreDetails"
+          // onMouseLeave={() => setDisplayMoreDetails(false)}
+        >
+          <MoreDetails movieId={movieId} />
+          {/* <MoreDetailsLazy movieId={movieId} /> */}
+        </div>
+        // </React.Suspense>
       )}
     </div>
   );
