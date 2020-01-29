@@ -53,13 +53,17 @@ export default class App extends React.Component<any, any> {
   };
 
   searchHandler = debounce(async (searchInput: string) => {
-    this.setState({ searchInput });
+    try {
+      this.setState({ searchInput });
 
-    const searchResults = await apiServiceHandler(searchInput);
-    this.setState({
-      page: searchResults.page,
-      movieResults: searchResults.results,
-    });
+      const searchResults = await apiServiceHandler(searchInput);
+      this.setState({
+        page: searchResults.page,
+        movieResults: searchResults.results,
+      });
+    } catch (e) {
+      console.warn(e);
+    }
   }, 500);
 
   public render() {

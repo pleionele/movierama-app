@@ -1,12 +1,15 @@
 import App from './App';
 import * as React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, wait } from '@testing-library/react';
 // @ts-ignore
 import * as payloadPayNowMovie from '../../api/stubs/payload-pay-now-movie.json';
 import { playNowMoviesService } from '../../services/playNowMovieService';
-import { searchMovieService } from '../../services/searchMovieService';
-import debounce from 'lodash.debounce';
+import { getMovieSearchResults } from '../../api/get-movie-search-results';
+import { getPlayNowMovies } from '../../api/get-playnow-movies';
+
 import { act } from 'react-dom/test-utils';
+jest.mock('../../api/get-movie-search-results');
+jest.mock('../../api/get-playnow-movies');
 
 jest.mock('../../services/playNowMovieService', () => {
   return {
@@ -14,34 +17,26 @@ jest.mock('../../services/playNowMovieService', () => {
   };
 });
 
-jest.mock('../../services/searchMovieService', () => {
-  return {
-    searchMovieService: jest.fn(),
-  };
-});
-
 describe('<App />', () => {
   beforeEach(() => {
-    (debounce as jest.Mock) = jest.fn(searchTerm => {
-      searchMovieService(searchTerm);
+    (getPlayNowMovies as jest.Mock).mockImplementation(() => {
+      Promise.resolve(payloadPayNowMovie);
     });
-    (playNowMoviesService as jest.Mock).mockReturnValue(payloadPayNowMovie);
+    (getMovieSearchResults as jest.Mock).mockImplementationOnce(() =>
+      Promise.resolve({ test: test })
+    );
   });
-
   afterEach(() => {
-    (debounce as jest.Mock).mockClear();
+    (playNowMoviesService as jest.Mock).mockClear();
+    (getMovieSearchResults as jest.Mock).mockClear();
   });
 
   it('should display', () => {
-    // @ts-ignore
-    playNowMoviesService.mockReturnValue(payloadPayNowMovie);
     const { getByTestId } = render(<App />);
     expect(getByTestId('appComponent')).toBeTruthy();
   });
 
   it('should have a search box', () => {
-    // @ts-ignore
-    playNowMoviesService.mockReturnValue(payloadPayNowMovie);
     const { getByTestId } = render(<App />);
     expect(getByTestId('appSearchBox')).toBeTruthy();
   });
@@ -53,12 +48,30 @@ describe('<App />', () => {
       expect(asFragment()).toMatchSnapshot();
     });
   });
-  // it('should show results from the search api when the user tries to search', () => {
-  //   const { getByTestId } = render(<App name="world" />);
-  //   // expect(searchMovieService).toHaveBeenCalledTimes(0);
+  it('should show results from the search api when the user tries to search', async () => {
+    const { getByTestId } = render(<App />);
+    const searchInput = getByTestId('appSearchBox');
+    await wait(() => {
+      fireEvent.change(searchInput, { target: { value: 'test' } });
+      expect(getMovieSearchResults).toHaveBeenCalledTimes(1);
 
-  //   const searchInput = getByTestId('appSearchBox');
-  //   fireEvent.change(searchInput, { target: { value: 'test' } });
-  //   expect(debounce).toHaveBeenCalled();
-  // });
+      expect(getMovieSearchResults).toHaveBeenCalledWith('test', 1);
+    });
+  });
+
+  it('should show results from the playnow api when the user removes search term', async () => {
+    const { getByTestId } = render(<App />);
+    const searchInput = getByTestId('appSearchBox');
+    await wait(() => {
+      fireEvent.change(searchInput, { target: { value: 'test' } });
+      expect(getMovieSearchResults).toHaveBeenCalled();
+      expect(getPlayNowMovies).toHaveBeenCalledTimes(0);
+    });
+    // user deletes the search term
+    await wait(() => {
+      fireEvent.change(searchInput, { target: { value: '' } });
+      expect(getMovieSearchResults).toHaveBeenCalledTimes(1);
+      expect(getPlayNowMovies).toHaveBeenCalledTimes(1);
+    });
+  });
 });
