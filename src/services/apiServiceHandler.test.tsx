@@ -1,4 +1,4 @@
-import { scrollingService } from './scrollingService';
+import { apiServiceHandler } from './apiServiceHandler';
 import { getMovieSearchResults } from '../api/get-movie-search-results';
 import { getPlayNowMovies } from '../api/get-playnow-movies';
 // @ts-ignore
@@ -15,7 +15,7 @@ jest.mock('../api/get-movie-search-results', () => {
   };
 });
 
-describe('scrollingService', () => {
+describe('apiServiceHandler', () => {
   beforeEach(() => {
     (getPlayNowMovies as jest.Mock).mockReturnValue(payloadPayNowMovie);
     (getMovieSearchResults as jest.Mock).mockReturnValue(payloadPayNowMovie);
@@ -26,14 +26,14 @@ describe('scrollingService', () => {
     (getMovieSearchResults as jest.Mock).mockClear();
   });
   it('should call the /movie/now_playing api when no search value is provided', () => {
-    scrollingService('', 1);
+    apiServiceHandler('', 1);
     expect(getMovieSearchResults).toHaveBeenCalledTimes(0);
 
     expect(getPlayNowMovies).toHaveBeenCalledTimes(1);
     expect(getPlayNowMovies).toHaveBeenCalledWith(1);
   });
   it('should call the /search/movie api when search value is provided', () => {
-    scrollingService('test', 1);
+    apiServiceHandler('test', 1);
     expect(getPlayNowMovies).toHaveBeenCalledTimes(0);
 
     expect(getMovieSearchResults).toHaveBeenCalledTimes(1);

@@ -6,7 +6,7 @@ import { searchMovieService } from '../../services/searchMovieService';
 import { MovieList } from '../MovieList/MovieList';
 import { SearchBox } from '../Searchbox/SearchBox';
 import debounce from 'lodash.debounce';
-import { scrollingService } from '../../services/scrollingService';
+import { apiServiceHandler } from '../../services/apiServiceHandler';
 
 export default class App extends React.Component<any, any> {
   constructor(props: any) {
@@ -47,7 +47,7 @@ export default class App extends React.Component<any, any> {
     this.setState({ loading: true });
 
     const { movieResults, page, searchInput } = this.state;
-    const newMovies = await scrollingService(searchInput, page + 1);
+    const newMovies = await apiServiceHandler(searchInput, page + 1);
     const allmovies = movieResults.concat(newMovies.results);
     this.setState({ movieResults: allmovies, loading: false, page: page + 1 });
   };
@@ -55,7 +55,7 @@ export default class App extends React.Component<any, any> {
   searchHandler = debounce(async (searchInput: string) => {
     this.setState({ searchInput });
 
-    const searchResults = await searchMovieService(searchInput);
+    const searchResults = await apiServiceHandler(searchInput);
     this.setState({
       page: searchResults.page,
       movieResults: searchResults.results,
