@@ -58,14 +58,11 @@ export const MovieItem: React.FC<MovieItemProps> = props => {
       </div>
       {displayMoreDetails && (
         <React.Suspense fallback={null}>
-          <div data-testid="moreDetails">
-            <MoreDetailsLazy
-              movieId={movieId}
-              // tslint:disable-next-line: jsx-no-lambda
-              // closePopup={() => {
-              //   setDisplayMoreDetails(false);
-              // }}
-            />
+          <div
+            data-testid="moreDetails"
+            // onMouseLeave={() => setDisplayMoreDetails(false)}
+          >
+            <MoreDetailsLazy movieId={movieId} />
           </div>
         </React.Suspense>
       )}
