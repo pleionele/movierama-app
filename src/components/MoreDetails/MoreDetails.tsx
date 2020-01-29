@@ -2,8 +2,8 @@ import React, { Fragment, useEffect, useState } from 'react';
 import { moreDetailsService } from '../../services/moreDetailsService';
 import './MoreDetails.scss';
 import ReviewList from '../Review/ReviewList';
-import YouTube from 'react-youtube';
 import { SimilarMoviesList } from '../SimilarMovies/SimilarMovies';
+import { Trailer } from './Trailer';
 
 interface MoreDetailsProps {
   movieId: number;
@@ -58,7 +58,6 @@ const MoreDetails: React.FC<MoreDetailsProps> = props => {
         });
     })();
   }, []);
-  // TODO Check if video exists
 
   return (
     <Fragment>
@@ -74,11 +73,7 @@ const MoreDetails: React.FC<MoreDetailsProps> = props => {
               data-testid="youtubeTrailer"
             >
               <div className="acr__item__header">Trailer</div>
-              <YouTube
-                videoId={data.video[0].key}
-                containerClassName="acr__item__body"
-                className="acr__item__body"
-              />
+              <Trailer {...data} />
             </div>
             <div
               // tslint:disable-next-line: jsx-no-lambda
