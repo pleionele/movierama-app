@@ -23,7 +23,7 @@ describe('<App />', () => {
       Promise.resolve(payloadPayNowMovie);
     });
     (getMovieSearchResults as jest.Mock).mockImplementationOnce(() =>
-      Promise.resolve({ test: test })
+      Promise.resolve({ test: 'test' })
     );
   });
   afterEach(() => {
