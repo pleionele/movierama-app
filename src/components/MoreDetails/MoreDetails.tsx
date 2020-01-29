@@ -7,12 +7,10 @@ import { SimilarMoviesList } from '../SimilarMovies/SimilarMovies';
 
 interface MoreDetailsProps {
   movieId: number;
-  // closePopup: () => void;
 }
 const MoreDetails: React.FC<MoreDetailsProps> = props => {
   const [data, setData] = useState();
   const [isloading, setLoading] = useState(true);
-  const [isDisplaying, setDisplay] = useState(true);
   const [accordion, setAccordion] = useState([
     {
       id: 0,
@@ -64,52 +62,48 @@ const MoreDetails: React.FC<MoreDetailsProps> = props => {
 
   return (
     <Fragment>
-      {isDisplaying && (
-        <div>
-          {isloading && <div> Please wait..</div>}
-          {!isloading && (
-            <section>
-              <header id="acr-label">More details</header>
-              <div className="acr__container">
-                <div
-                  className={'acr__item ' + (accordion[0].open ? 'open' : '')}
-                  // tslint:disable-next-line: jsx-no-lambda
-                  onClick={e => ToggleEventHandler(e, 0)}
-                  data-testid="youtubeTrailer"
-                >
-                  <div className="acr__item__header">Trailer</div>
-                  <YouTube
-                    videoId={data.video[0].key}
-                    containerClassName="acr__item__body"
-                    className="acr__item__body"
-                  />
-                </div>
-                <div
-                  // tslint:disable-next-line: jsx-no-lambda
-                  onClick={e => ToggleEventHandler(e, 1)}
-                  className={'acr__item ' + (accordion[1].open ? 'open' : '')}
-                  data-testid="reviewsList"
-                >
-                  <div className="acr__item__header">Reviews</div>
-                  <div className="acr__item__body">
-                    <ReviewList reviews={data.reviews} />
-                  </div>
-                </div>
-                <div
-                  // tslint:disable-next-line: jsx-no-lambda
-                  onClick={e => ToggleEventHandler(e, 2)}
-                  className={'acr__item ' + (accordion[2].open ? 'open' : '')}
-                  data-testid="similarMovies"
-                >
-                  <div className="acr__item__header">Similar Movies</div>
-                  <div className="acr__item__body">
-                    <SimilarMoviesList movies={data.similarMovies} />
-                  </div>
-                </div>
+      {isloading && <div> Please wait..</div>}
+      {!isloading && (
+        <section>
+          <header id="acr-label">More details</header>
+          <div className="acr__container">
+            <div
+              className={'acr__item ' + (accordion[0].open ? 'open' : '')}
+              // tslint:disable-next-line: jsx-no-lambda
+              onClick={e => ToggleEventHandler(e, 0)}
+              data-testid="youtubeTrailer"
+            >
+              <div className="acr__item__header">Trailer</div>
+              <YouTube
+                videoId={data.video[0].key}
+                containerClassName="acr__item__body"
+                className="acr__item__body"
+              />
+            </div>
+            <div
+              // tslint:disable-next-line: jsx-no-lambda
+              onClick={e => ToggleEventHandler(e, 1)}
+              className={'acr__item ' + (accordion[1].open ? 'open' : '')}
+              data-testid="reviewsList"
+            >
+              <div className="acr__item__header">Reviews</div>
+              <div className="acr__item__body">
+                <ReviewList reviews={data.reviews} />
               </div>
-            </section>
-          )}
-        </div>
+            </div>
+            <div
+              // tslint:disable-next-line: jsx-no-lambda
+              onClick={e => ToggleEventHandler(e, 2)}
+              className={'acr__item ' + (accordion[2].open ? 'open' : '')}
+              data-testid="similarMovies"
+            >
+              <div className="acr__item__header">Similar Movies</div>
+              <div className="acr__item__body">
+                <SimilarMoviesList movies={data.similarMovies} />
+              </div>
+            </div>
+          </div>
+        </section>
       )}
     </Fragment>
   );

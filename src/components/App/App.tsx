@@ -1,8 +1,6 @@
 import * as React from 'react';
 import './App.scss';
-import { getPlayNowMovies } from '../../api/get-playnow-movies';
 import { playNowMoviesService } from '../../services/playNowMovieService';
-import { searchMovieService } from '../../services/searchMovieService';
 import { MovieList } from '../MovieList/MovieList';
 import { SearchBox } from '../Searchbox/SearchBox';
 import debounce from 'lodash.debounce';
@@ -17,7 +15,7 @@ export default class App extends React.Component<any, any> {
       page: 1,
       loading: false,
       searchInput: '',
-      // TOTALPAGES
+      // TODO add total pages
     };
   }
 
@@ -84,7 +82,7 @@ export default class App extends React.Component<any, any> {
               <MovieList apiResults={movieResults} movieGenres={movieGenres} />
             )}
           </div>
-          {loading && <div>Please wait for Loading</div>}
+          {loading && <div>Please wait...</div>}
         </div>
       </div>
     );

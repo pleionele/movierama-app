@@ -3,9 +3,7 @@
 exports[`More Details should match the snapshot 1`] = `
 <DocumentFragment>
   <div>
-    <div>
-       Please wait..
-    </div>
+     Please wait..
   </div>
 </DocumentFragment>
 `;
