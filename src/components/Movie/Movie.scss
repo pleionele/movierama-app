@@ -1,4 +1,4 @@
-@import '../../styles/color.scss';
+@import '../../styles/default.scss';
 
 .movie {
   box-sizing: border-box;
@@ -7,11 +7,33 @@
   padding-top: 0.5em;
   cursor: pointer;
 }
+@media (hover: hover) {
+  .movie {
+    box-sizing: border-box;
+    padding-left: 0.5em;
+    background: $white;
+    padding-top: 0.5em;
+    cursor: pointer;
+  }
+  .movie:hover,
+  .movie:focus {
+    -webkit-box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1),
+      0 0 0 2px rgb(255, 255, 255), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1),
+      0 0 0 2px rgb(255, 255, 255), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+
+    // -webkit-box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14),
+    //   0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -7px rgba(0, 0, 0, 0.2);
+    // box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14),
+    //   0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -7px rgba(0, 0, 0, 0.2);
+  }
+}
 
 .genres {
   border: 2px solid black;
   border-radius: 4px;
-  margin: 5px;
+  margin: 10px;
   flex-direction: row;
   display: flex;
   justify-content: center;

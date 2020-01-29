@@ -10,7 +10,9 @@
     "forceConsistentCasingInFileNames": true,
     "importHelpers": true,
     "strictNullChecks": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "lib": ["dom", "esnext"]
   },
   "plugins": [{ "name": "typescript-tslint-plugin" }],
   "include": ["./src/**/*"],

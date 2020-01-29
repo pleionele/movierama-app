@@ -19,18 +19,18 @@ export const SimilarMoviesList = (props: any) => {
   const { movies } = props;
   const children =
     movies.length === 0 ? (
-      <div>No similar movies found</div>
+      <div data-testid="noSimilar">No similar movies found</div>
     ) : (
       movies.map((item: any, index: number) => {
         // TODO Change this logic
         if (index < 6) {
-          return <MovieItem {...item} key={item.author} />;
+          return <MovieItem {...item} key={index} />;
         }
       })
     );
 
   return (
-    <div data-testid="similarMoviesList" className="sml-contaner">
+    <div data-testid="similarMovies" className="sml-contaner">
       {children}
     </div>
   );

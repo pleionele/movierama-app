@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import { moreDetailsService } from '../../services/moreDetailsService';
 import './MoreDetails.scss';
 import ReviewList from '../Review/ReviewList';
@@ -7,7 +7,7 @@ import { SimilarMoviesList } from '../SimilarMovies/SimilarMovies';
 
 interface MoreDetailsProps {
   movieId: number;
-  closePopup: () => void;
+  // closePopup: () => void;
 }
 const MoreDetails: React.FC<MoreDetailsProps> = props => {
   const [data, setData] = useState();
@@ -62,7 +62,6 @@ const MoreDetails: React.FC<MoreDetailsProps> = props => {
         // tslint:disable-next-line: no-console
         .catch(error => console.log(error))
         .finally(() => {
-          console.log(returnedData);
           setData(returnedData);
           setLoading(false);
         });
@@ -70,7 +69,7 @@ const MoreDetails: React.FC<MoreDetailsProps> = props => {
   }, []);
 
   return (
-    <React.Fragment>
+    <Fragment>
       {isDisplaying && (
         <div>
           {isloading && <div> Please wait..</div>}
@@ -81,10 +80,11 @@ const MoreDetails: React.FC<MoreDetailsProps> = props => {
                 <div
                   className={'acr__item ' + (accordion[0].open ? 'open' : '')}
                   onClick={toggleTrailer}
+                  data-testid="youtubeTrailer"
                 >
                   <div className="acr__item__header">Trailer</div>
                   <YouTube
-                    videoId={data?.video[0].key}
+                    videoId={data.video[0].key}
                     containerClassName="acr__item__body"
                     className="acr__item__body"
                   />
@@ -92,19 +92,21 @@ const MoreDetails: React.FC<MoreDetailsProps> = props => {
                 <div
                   onClick={toggleReviews}
                   className={'acr__item ' + (accordion[1].open ? 'open' : '')}
+                  data-testid="reviewsList"
                 >
                   <div className="acr__item__header">Reviews</div>
                   <div className="acr__item__body">
-                    <ReviewList reviews={data?.reviews} />
+                    <ReviewList reviews={data.reviews} />
                   </div>
                 </div>
                 <div
                   onClick={toggleSimilarMovies}
                   className={'acr__item ' + (accordion[2].open ? 'open' : '')}
+                  data-testid="similarMovies"
                 >
                   <div className="acr__item__header">Similar Movies</div>
                   <div className="acr__item__body">
-                    <SimilarMoviesList movies={data?.similarMovies} />
+                    <SimilarMoviesList movies={data.similarMovies} />
                   </div>
                 </div>
               </div>
@@ -112,7 +114,7 @@ const MoreDetails: React.FC<MoreDetailsProps> = props => {
           )}
         </div>
       )}
-    </React.Fragment>
+    </Fragment>
   );
 };
 

@@ -7,12 +7,11 @@ interface MovieItemProps {
   overview: string;
   release_date: string;
   vote_average: number;
-  genres: [string];
+  genres: string[];
   poster_path: string;
   movieId: number;
 }
 
-// @ts-ignore
 const MoreDetailsLazy = React.lazy(() => import('../MoreDetails/MoreDetails'));
 
 export const MovieItem: React.FC<MovieItemProps> = props => {
@@ -48,7 +47,9 @@ export const MovieItem: React.FC<MovieItemProps> = props => {
           <p className="container__text">{overview}</p>
         </div>
         <div className="section movie__overview">
-          <div data-testid="releaseYear">Year: {release_date}</div>
+          <div data-testid="releaseYear">
+            Year: {new Date(release_date).getFullYear()}
+          </div>
           <div data-testid="voteAverage">Votes: {vote_average} /10</div>
           <div data-testid="genres" className="genres">
             {genresItems}
@@ -57,13 +58,12 @@ export const MovieItem: React.FC<MovieItemProps> = props => {
       </div>
       {displayMoreDetails && (
         <React.Suspense fallback={null}>
-          <MoreDetailsLazy
-            movieId={movieId}
-            // tslint:disable-next-line: jsx-no-lambda
-            closePopup={() => {
-              setDisplayMoreDetails(false);
-            }}
-          />
+          <div
+            data-testid="moreDetails"
+            // onMouseLeave={() => setDisplayMoreDetails(false)}
+          >
+            <MoreDetailsLazy movieId={movieId} />
+          </div>
         </React.Suspense>
       )}
     </div>
