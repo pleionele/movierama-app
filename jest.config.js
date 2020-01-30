@@ -15,6 +15,7 @@ module.exports = {
     '!**/node_modules/**',
     '!**/dist/**',
     '!**/src/index.tsx',
+    '!**/src/services/moreDetailsService_PROTOTYPE_.tsx',
   ],
   coverageThreshold: {
     global: {
