@@ -12,29 +12,26 @@
   height: 600px;
 }
 
-/* Mobile Styles */
 @media only screen and (max-width: 400px) {
   body {
     background-color: $dim-grey;
-    -webkit-font-smoothing: antialised;
+    -webkit-font-smoothing: antialiased;
     --moz-osx-font-smoothing: grayscale;
   }
 }
 
-/* Tablet Styles */
 @media only screen and (min-width: 401px) and (max-width: 960px) {
   body {
     background-color: $dim-grey;
-    -webkit-font-smoothing: antialised;
+    -webkit-font-smoothing: antialiased;
     --moz-osx-font-smoothing: grayscale;
   }
 }
 
-/* Desktop Styles */
 @media only screen and (min-width: 961px) {
   body {
     background-color: $dim-grey;
-    -webkit-font-smoothing: antialised;
+    -webkit-font-smoothing: antialiased;
     --moz-osx-font-smoothing: grayscale;
   }
 

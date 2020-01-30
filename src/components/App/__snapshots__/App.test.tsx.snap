@@ -6,7 +6,7 @@ exports[`<App /> should match the snapshot 1`] = `
     class="page"
   >
     <header
-      class="section header-container"
+      class="section header__container"
     >
       <h1
         class="header"
@@ -22,11 +22,11 @@ exports[`<App /> should match the snapshot 1`] = `
       />
     </header>
     <div
-      class="movie-container"
+      class="movie__container"
       data-testid="appComponent"
     >
       <div
-        class="movie-grid"
+        class="movie__grid"
       />
     </div>
   </div>

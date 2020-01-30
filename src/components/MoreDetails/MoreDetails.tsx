@@ -50,7 +50,6 @@ const MoreDetails: React.FC<MoreDetailsProps> = props => {
         .then(results => {
           returnedData = results;
         })
-        // tslint:disable-next-line: no-console
         .catch(error => console.log(error))
         .finally(() => {
           setData(returnedData);
