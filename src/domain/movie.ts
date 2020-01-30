@@ -11,3 +11,9 @@ export interface MovieResults {
   results: [Movie];
   page: number;
 }
+
+export interface MoreDetails {
+  reviews: [];
+  similarMovies: [];
+  video: string;
+}

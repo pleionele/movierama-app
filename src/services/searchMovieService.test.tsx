@@ -17,11 +17,7 @@ describe('searchMovieService', () => {
   afterEach(() => {
     (getMovieSearchResults as jest.Mock).mockClear();
   });
-  //   it('should call the /movie/now_playing api when no search value is provided', () => {
-  //     searchMovieService(undefined);
-  //     expect(getMovieSearchResults).toHaveBeenCalledTimes(1);
-  //     expect(getMovieSearchResults).toHaveBeenCalledWith(1);
-  //   });
+
   it('should call the /search/movie api when search value is provided', () => {
     searchMovieService('test');
     expect(getMovieSearchResults).toHaveBeenCalledTimes(1);

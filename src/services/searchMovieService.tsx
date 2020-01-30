@@ -1,6 +1,6 @@
 import { getMovieSearchResults } from '../api/get-movie-search-results';
 
-// this service will receive the search
+// this service will receive the search results
 // and sanitize the data
 
 export const searchMovieService = (searchValue: string) => {

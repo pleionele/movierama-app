@@ -72,12 +72,12 @@ export default class App extends React.Component<any, any> {
     const { movieResults, movieGenres, loading, searchInput } = this.state;
     return (
       <div className="page">
-        <header className="section header-container">
+        <header className="section header__container">
           <h1 className="header">MovieRama</h1>
           <SearchBox searchHandler={this.searchHandler} />
         </header>
-        <div className="movie-container" data-testid="appComponent">
-          <div className="movie-grid">
+        <div className="movie__container" data-testid="appComponent">
+          <div className="movie__grid">
             {movieResults && (
               <MovieList apiResults={movieResults} movieGenres={movieGenres} />
             )}

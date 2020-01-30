@@ -34,7 +34,7 @@ input[type='search']::-webkit-search-results-decoration {
 .search:hover {
   width: 300px;
 }
-.header-container {
+.header__container {
   background-color: $dim-grey;
   letter-spacing: 2px;
   color: $white;
@@ -47,11 +47,11 @@ input[type='search']::-webkit-search-results-decoration {
   align-items: center;
 }
 
-.movie-container {
+.movie__container {
   display: flex;
   justify-content: space-between;
 }
-.movie-grid {
+.movie__grid {
   flex-direction: column;
   align-items: center;
 }

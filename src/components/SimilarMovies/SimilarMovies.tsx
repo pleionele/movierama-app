@@ -30,7 +30,7 @@ export const SimilarMoviesList = (props: any) => {
     );
 
   return (
-    <div data-testid="similarMovies" className="sml-contaner">
+    <div data-testid="similarMovies" className="sml__contaner">
       {children}
     </div>
   );

@@ -25,7 +25,6 @@ export const MovieList = ({ apiResults, movieGenres }: any) => {
         </React.Fragment>
       );
     } catch (e) {
-      // tslint:disable-next-line: no-console
       console.log(e);
     }
   });
