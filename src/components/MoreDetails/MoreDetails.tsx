@@ -72,7 +72,7 @@ const MoreDetails: React.FC<MoreDetailsProps> = props => {
               data-testid="youtubeTrailer"
             >
               <div className="acr__item__header">Trailer</div>
-              <Trailer {...data} />
+              <Trailer data={data} />
             </div>
             <div
               // tslint:disable-next-line: jsx-no-lambda
