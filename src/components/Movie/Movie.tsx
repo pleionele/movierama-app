@@ -32,6 +32,9 @@ export const MovieItem: React.FC<MovieItemProps> = props => {
   ));
   const [displayMoreDetails, setDisplayMoreDetails] = React.useState(false);
 
+  React.useEffect(() => {
+    setDisplayMoreDetails(false);
+  }, [title]);
   const toggleDisplay = () => {
     setDisplayMoreDetails(!displayMoreDetails);
   };
