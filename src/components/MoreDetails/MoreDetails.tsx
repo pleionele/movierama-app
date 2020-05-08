@@ -82,6 +82,7 @@ const MoreDetails: React.FC<MoreDetailsProps> = props => {
             >
               <div className="acr__item__header">Reviews</div>
               <div className="acr__item__body">
+                // @ts-ignore
                 <ReviewList reviews={data.reviews} />
               </div>
             </div>
@@ -93,6 +94,7 @@ const MoreDetails: React.FC<MoreDetailsProps> = props => {
             >
               <div className="acr__item__header">Similar Movies</div>
               <div className="acr__item__body">
+                // @ts-ignore
                 <SimilarMoviesList movies={data.similarMovies} />
               </div>
             </div>
